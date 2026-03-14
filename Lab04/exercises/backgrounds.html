@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backgrounds Exercises 10 & 11</title>
+  <style>
+
+    /* ==============================
+       EXERCISE 10 - Background Properties
+       ============================== */
+
+    /* 1. Solid colors — different formats */
+    .bg-hex  { background-color: #e94560; }
+    .bg-rgb  { background-color: rgb(15, 52, 96); }
+    .bg-hsl  { background-color: hsl(210, 73%, 40%); }
+    .bg-rgba { background-color: rgba(233, 69, 96, 0.3); }
+
+    /* 2. Background repeat */
+    .bg-repeat {
+      background-image: repeating-linear-gradient(
+        45deg, #e94560 0px, #e94560 10px, white 10px, white 20px
+      );
+    }
+
+    .bg-no-repeat {
+      background-color: #0f3460;
+      background-image: radial-gradient(circle at 30px 30px, rgba(255,255,255,0.2) 20px, transparent 20px);
+      background-repeat: no-repeat;
+    }
+
+    /* 3. Background position and size */
+    .bg-position {
+      background: linear-gradient(45deg, #e94560, #0f3460);
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .bg-cover {
+      background: linear-gradient(135deg, #11998e, #38ef7d);
+      background-size: cover;
+    }
+
+    /* 4. Background attachment */
+    .bg-fixed {
+      background: linear-gradient(to right, #1a1a2e, #e94560);
+      background-attachment: fixed;
+    }
+
+
+    /* ==============================
+       EXERCISE 11 - Advanced Backgrounds
+       ============================== */
+
+    /* 1. Multiple background layers */
+    .multi-bg {
+      background:
+        linear-gradient(rgba(233,69,96,0.6), rgba(233,69,96,0.6)),
+        linear-gradient(to right, #0f3460, #1a1a2e);
+    }
+
+    /* 2. Linear gradients */
+    .grad-1 { background: linear-gradient(to right, #e94560, #0f3460); }
+    .grad-2 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+    .grad-3 { background: linear-gradient(to bottom, #fc5c7d, #6a3093); }
+
+    /* 3. Radial gradients */
+    .grad-radial-1 { background: radial-gradient(circle, #e94560, #1a1a2e); }
+    .grad-radial-2 { background: radial-gradient(ellipse at top, #11998e, #0f3460); }
+
+    /* 4. Background blend mode */
+    .blend {
+      background:
+        linear-gradient(rgba(233,69,96,0.8), rgba(233,69,96,0.8)),
+        linear-gradient(to right, #11998e, #38ef7d);
+      background-blend-mode: multiply;
+    }
+
+    /* 5. Background clip */
+    .bg-clip-text {
+      background: linear-gradient(to right, #e94560, #0f3460);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: Arial;
+    }
+
+
+    /* General styles */
+    body { padding: 30px; background: #f9f9f9; font-family: Arial; }
+    h1   { color: #e94560; margin-bottom: 5px; }
+    h2   { color: #0f3460; border-bottom: 2px solid #e94560; padding-bottom: 5px; margin: 25px 0 12px; }
+    .demo { background: white; padding: 15px; border-radius: 8px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+    /* All colored boxes look the same size */
+    .box {
+      height: 100px;
+      border-radius: 8px;
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .dark { color: #333; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Backgrounds — Exercises 10 & 11</h1>
+
+  <!-- EXERCISE 10 -->
+  <h2>Exercise 10 — Background Properties</h2>
+  <div class="demo">
+
+    <p><strong>1. Solid Colors</strong></p>
+    <div class="box bg-hex">background: #e94560 (HEX)</div>
+    <div class="box bg-rgb">background: rgb(15, 52, 96) (RGB)</div>
+    <div class="box bg-hsl">background: hsl(210, 73%, 40%) (HSL)</div>
+    <div class="box bg-rgba dark">background: rgba — transparent (RGBA)</div>
+
+    <br>
+    <p><strong>2. Background Repeat</strong></p>
+    <div class="box bg-repeat">background-repeat: repeat (striped pattern)</div>
+    <div class="box bg-no-repeat">background-repeat: no-repeat</div>
+
+    <br>
+    <p><strong>3. Background Position and Size</strong></p>
+    <div class="box bg-position dark">background-size: 50% — positioned center</div>
+    <div class="box bg-cover">background-size: cover</div>
+
+    <br>
+    <p><strong>4. Background Attachment</strong></p>
+    <div class="box bg-fixed">background-attachment: fixed</div>
+
+  </div>
+
+  <!-- EXERCISE 11 -->
+  <h2>Exercise 11 — Advanced Backgrounds</h2>
+  <div class="demo">
+
+    <p><strong>1. Multiple Background Layers</strong></p>
+    <div class="box multi-bg">Two layers combined with overlay</div>
+
+    <br>
+    <p><strong>2. Linear Gradients</strong></p>
+    <div class="box grad-1">linear-gradient — left to right</div>
+    <div class="box grad-2">linear-gradient — diagonal green</div>
+    <div class="box grad-3">linear-gradient — top to bottom purple</div>
+
+    <br>
+    <p><strong>3. Radial Gradients</strong></p>
+    <div class="box grad-radial-1">radial-gradient — circle</div>
+    <div class="box grad-radial-2">radial-gradient — ellipse at top</div>
+
+    <br>
+    <p><strong>4. Background Blend Mode</strong></p>
+    <div class="box blend">background-blend-mode: multiply</div>
+
+    <br>
+    <p><strong>5. Background Clip</strong></p>
+    <p class="bg-clip-text">Background clipped to text only!</p>
+
+  </div>
+
+</body>
+</html>

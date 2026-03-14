@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 6 - Pseudo-elements</title>
+  <style>
+
+    /* 1. ::before — adds content BEFORE the element */
+    .note::before {
+      content: "📌 ";        /* this text/emoji is added by CSS, not HTML */
+      font-weight: bold;
+      color: #e94560;
+    }
+
+    /* 2. ::after — adds content AFTER the element */
+    .price::after {
+      content: " PKR";       /* adds PKR after every price automatically */
+      color: gray;
+      font-size: 0.85rem;
+    }
+
+    /* ::before to add a decorative line before headings */
+    h3::before {
+      content: "▶ ";
+      color: #e94560;
+    }
+
+    /* 3. ::first-letter — styles only the very first letter */
+    .drop-cap::first-letter {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: #e94560;
+      float: left;           /* lets text wrap around it */
+      margin-right: 6px;
+      line-height: 1;
+    }
+
+    /* 4. ::first-line — styles only the first line of a paragraph */
+    .first-line-demo::first-line {
+      font-weight: bold;
+      color: #0f3460;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    /* 5. ::selection — styles text when user highlights it */
+    ::selection {
+      background: #e94560;
+      color: white;
+    }
+
+    /* 6. Combining pseudo-element with pseudo-class
+          Add a checkmark AFTER a list item on hover */
+    .fancy-list li::after {
+      content: "";
+      transition: content 0.3s;
+    }
+    .fancy-list li:hover::after {
+      content: " ✔";
+      color: green;
+      font-weight: bold;
+    }
+
+    /* General styles */
+    body { padding: 30px; font-family: Arial; line-height: 1.8; }
+    h2 { color: #e94560; margin: 25px 0 10px; border-bottom: 2px solid #e94560; padding-bottom: 5px; }
+    .note { background: #fff8e1; padding: 10px; border-radius: 6px; margin: 8px 0; }
+    .price { font-size: 1.3rem; font-weight: bold; color: #0f3460; margin: 8px 0; }
+    .drop-cap { max-width: 500px; }
+    .first-line-demo { max-width: 500px; background: #f9f9f9; padding: 15px; border-radius: 6px; }
+    .fancy-list { padding-left: 20px; }
+    .fancy-list li { cursor: pointer; padding: 4px 0; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 6 - Pseudo-elements</h1>
+
+  <!-- ::before and ::after -->
+  <h2>1. ::before and ::after</h2>
+  <p class="note">This note has a pin added before it using ::before — no HTML was changed!</p>
+  <p class="note">This is another note — the pin appears automatically!</p>
+  <p class="price">1500</p>
+  <p class="price">2999</p>
+  <p>↑ "PKR" is added after every price using ::after — no HTML needed!</p>
+
+  <h3>This heading has an arrow added using h3::before</h3>
+  <h3>This one too — automatically!</h3>
+
+  <!-- ::first-letter -->
+  <h2>2. ::first-letter (Drop Cap)</h2>
+  <p class="drop-cap">his is a paragraph with a large decorative first letter, just like you see in old books, magazines and newspapers. Only CSS is used to create this effect with no extra HTML.</p>
+
+  <!-- ::first-line -->
+  <h2>3. ::first-line</h2>
+  <p class="first-line-demo">This first line is bold, dark blue and has letter spacing applied to it using the ::first-line pseudo-element. The rest of this paragraph looks completely normal because the style only targets the very first line of text.</p>
+
+  <!-- ::selection -->
+  <h2>4. ::selection</h2>
+  <p>Try selecting and highlighting any text on this page — it turns red with white text because of ::selection!</p>
+  <p>Select this text too to see the effect clearly!</p>
+
+  <!-- Combining pseudo-element + pseudo-class -->
+  <h2>5. Combining ::after with :hover</h2>
+  <p>Hover over each list item to see a checkmark appear:</p>
+  <ul class="fancy-list">
+    <li>Learn HTML</li>
+    <li>Learn CSS</li>
+    <li>Learn JavaScript</li>
+    <li>Build Projects</li>
+  </ul>
+
+</body>
+</html>

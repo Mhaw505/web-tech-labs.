@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1 - CSS Selectors Practice</title>
+  <style>
+
+    /* === 5 BASIC SELECTORS === */
+
+    /* 1. Element selector */
+    p { font-family: Arial; color: #333; line-height: 1.6; }
+
+    /* 2. Class selector */
+    .highlight { background: #fff3cd; padding: 3px 8px; border-radius: 4px; }
+
+    /* 3. ID selector */
+    #page-title { color: #e94560; font-size: 2rem; }
+
+    /* 4. Universal selector */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* 5. Group selector */
+    h2, h3 { color: #0f3460; margin: 20px 0 10px; }
+
+
+    /* === 3 ATTRIBUTE SELECTORS === */
+
+    /* 1. Has attribute */
+    input[type] { padding: 8px; border: 2px solid #ccc; border-radius: 4px; display: block; margin: 6px 0; }
+
+    /* 2. Exact value */
+    input[type="text"] { border-color: #0f3460; background: #f0f4ff; }
+
+    /* 3. Partial match */
+    a[href*="uet"] { color: green; font-weight: bold; }
+
+
+    /* === 4 COMBINATORS === */
+
+    /* 1. Descendant */
+    .combo p { background: #e8f4fd; padding: 6px; border-radius: 4px; margin: 4px 0; }
+
+    /* 2. Child */
+    .combo > h3 { border-left: 4px solid #e94560; padding-left: 10px; }
+
+    /* 3. Adjacent sibling */
+    h3 + p { font-style: italic; color: #555; }
+
+    /* 4. General sibling */
+    h3 ~ p { margin-left: 20px; }
+
+
+    /* === 5 PSEUDO-CLASSES === */
+
+    /* 1. :hover */
+    .btn:hover { background: #e94560; color: white; transform: translateY(-2px); }
+
+    /* 2. :focus */
+    input:focus { outline: none; border-color: #e94560 !important; box-shadow: 0 0 6px rgba(233,69,96,0.3); }
+
+    /* 3. :first-child */
+    li:first-child { color: #e94560; font-weight: bold; }
+
+    /* 4. :nth-child */
+    li:nth-child(odd) { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; }
+
+    /* 5. :not() */
+    p:not(.highlight) { opacity: 0.9; }
+
+
+    /* === 2 PSEUDO-ELEMENTS === */
+
+    /* 1. ::before */
+    .note::before { content: "📌 "; font-weight: bold; }
+
+    /* 2. ::first-letter */
+    .drop-cap::first-letter {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #e94560;
+      float: left;
+      margin-right: 6px;
+      line-height: 1;
+    }
+
+    /* General styles */
+    body { padding: 30px; background: #f9f9f9; font-family: Arial; }
+    .section { background: white; padding: 20px; border-radius: 10px; margin: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+    .section h2 { border-bottom: 2px solid #e94560; padding-bottom: 8px; font-size: 1.2rem; }
+    .btn { padding: 10px 20px; background: #0f3460; color: white; border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s; }
+    .combo { border: 2px dashed #ccc; padding: 15px; border-radius: 8px; }
+    ul { padding-left: 20px; margin-top: 10px; }
+    li { margin: 4px 0; }
+    a { display: block; margin: 4px 0; }
+
+  </style>
+</head>
+<body>
+
+  <h1 id="page-title">Task 1 — CSS Selectors Practice</h1>
+
+  <div class="section">
+    <h2>Basic Selectors</h2>
+    <p>Element selector — styles all p tags.</p>
+    <p class="highlight">Class selector — yellow highlight.</p>
+    <h3>Group selector — h2 and h3 share same color.</h3>
+  </div>
+
+  <div class="section">
+    <h2>Attribute Selectors</h2>
+    <input type="text" placeholder="type=text — blue border">
+    <input type="email" placeholder="type=email — gray border">
+    <a href="https://uet.edu.pk">UET Peshawar — contains uet → green</a>
+    <a href="https://google.com">Google — no match</a>
+  </div>
+
+  <div class="section">
+    <h2>Combinators</h2>
+    <div class="combo">
+      <h3>Direct child h3</h3>
+      <p>Adjacent sibling — italic.</p>
+      <p>General sibling — indented.</p>
+      <div><p>Grandchild — descendant still styles it.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Pseudo-classes</h2>
+    <button class="btn">Hover over me!</button>
+    <br><br>
+    <input type="text" placeholder="Click to see :focus">
+    <ul>
+      <li>First — red bold</li>
+      <li>Second — white</li>
+      <li>Third — gray</li>
+      <li>Fourth — white</li>
+    </ul>
+    <br>
+    <p>Styled by :not(.highlight)</p>
+    <p class="highlight">Skipped by :not(.highlight)</p>
+  </div>
+
+  <div class="section">
+    <h2>Pseudo-elements</h2>
+    <p class="note">Pin added by ::before automatically.</p>
+    <br>
+    <p class="drop-cap">his paragraph has a large first letter using the ::first-letter pseudo-element just like in books.</p>
+  </div>
+
+</body>
+</html>

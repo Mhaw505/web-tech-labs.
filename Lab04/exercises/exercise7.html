@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 7 - Font Properties</title>
+
+  <!-- Importing 3 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* 1. FONT FAMILY
+          font-family sets the typeface
+          Always provide fallback fonts after the main one */
+
+    .font-playfair { font-family: 'Playfair Display', serif; }     /* Google Font 1 */
+    .font-lato     { font-family: 'Lato', sans-serif; }            /* Google Font 2 */
+    .font-code     { font-family: 'Source Code Pro', monospace; }  /* Google Font 3 */
+    .font-georgia  { font-family: Georgia, serif; }                /* Web safe font */
+    .font-arial    { font-family: Arial, sans-serif; }             /* Web safe font */
+
+
+    /* 2. FONT SIZE
+          px  — fixed size, doesn't scale
+          em  — relative to parent element
+          rem — relative to root (html) element
+          %   — percentage of parent size */
+
+    .size-px  { font-size: 24px; }     /* always 24px */
+    .size-em  { font-size: 1.5em; }    /* 1.5x parent size */
+    .size-rem { font-size: 1.5rem; }   /* 1.5x root size */
+    .size-pct { font-size: 130%; }     /* 130% of parent */
+    .size-sm  { font-size: 0.8rem; }   /* smaller than normal */
+
+
+    /* 3. FONT WEIGHT
+          Controls how bold or thin the text is */
+
+    .weight-thin    { font-weight: 100; }   /* thinnest */
+    .weight-light   { font-weight: 300; }   /* light */
+    .weight-normal  { font-weight: 400; }   /* normal/regular */
+    .weight-bold    { font-weight: 700; }   /* bold */
+    .weight-black   { font-weight: 900; }   /* heaviest */
+
+
+    /* 4. FONT STYLE and VARIANT */
+
+    .style-normal  { font-style: normal; }
+    .style-italic  { font-style: italic; }
+    .style-oblique { font-style: oblique; }
+
+    /* font-variant: small-caps makes lowercase letters
+       look like smaller uppercase letters */
+    .variant-caps  { font-variant: small-caps; }
+
+
+    /* General styles */
+    body { padding: 30px; line-height: 2; background: #f9f9f9; }
+    h2 { color: #e94560; margin: 25px 0 10px; border-bottom: 2px solid #e94560; padding-bottom: 5px; font-family: Arial; }
+    p  { margin: 6px 0; font-size: 1.1rem; }
+    .demo { background: white; padding: 15px; border-radius: 8px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+  </style>
+</head>
+<body>
+
+  <h1 style="font-family: Arial;">Exercise 7 - Font Properties</h1>
+
+  <!-- FONT FAMILY -->
+  <h2>1. Font Family</h2>
+  <div class="demo">
+    <p class="font-playfair">Playfair Display — Google Font, elegant serif style</p>
+    <p class="font-lato">Lato — Google Font, clean modern sans-serif</p>
+    <p class="font-code">Source Code Pro — Google Font, monospace for code</p>
+    <p class="font-georgia">Georgia — web safe serif font</p>
+    <p class="font-arial">Arial — web safe sans-serif font</p>
+  </div>
+
+  <!-- FONT SIZE -->
+  <h2>2. Font Size</h2>
+  <div class="demo">
+    <p class="size-px">font-size: 24px — fixed pixels</p>
+    <p class="size-em">font-size: 1.5em — relative to parent</p>
+    <p class="size-rem">font-size: 1.5rem — relative to root</p>
+    <p class="size-pct">font-size: 130% — percentage</p>
+    <p class="size-sm">font-size: 0.8rem — smaller than normal</p>
+  </div>
+
+  <!-- FONT WEIGHT -->
+  <h2>3. Font Weight</h2>
+  <div class="demo">
+    <p class="font-lato weight-thin">font-weight: 100 — Thin</p>
+    <p class="font-lato weight-light">font-weight: 300 — Light</p>
+    <p class="font-lato weight-normal">font-weight: 400 — Normal</p>
+    <p class="font-lato weight-bold">font-weight: 700 — Bold</p>
+    <p class="font-lato weight-black">font-weight: 900 — Black</p>
+  </div>
+
+  <!-- FONT STYLE AND VARIANT -->
+  <h2>4. Font Style and Variant</h2>
+  <div class="demo">
+    <p class="style-normal">font-style: normal — regular text</p>
+    <p class="style-italic">font-style: italic — slanted text</p>
+    <p class="style-oblique">font-style: oblique — also slanted</p>
+    <p class="variant-caps">font-variant: small-caps — This Makes Lowercase Look Like Small Capitals</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 1 - CSS Methods</title>
+
+  <!-- METHOD 2: Internal CSS -->
+  <style>
+    h1 { color: blue; font-size: 2rem; }
+    p  { color: green; font-size: 1.1rem; }
+  </style>
+
+</head>
+<body>
+
+  <!-- METHOD 1: Inline CSS — inline always wins! -->
+  <h1 style="background-color: yellow;">Hello CSS World!</h1>
+
+  <p>This is green — styled by internal CSS.</p>
+
+  <!-- Inline overrides internal, so this is red not green -->
+  <p style="color: red; font-weight: bold;">
+    This is red — inline CSS beats internal CSS!
+  </p>
+
+</body>
+</html>

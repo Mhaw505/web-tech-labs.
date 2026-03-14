@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 5 - Pseudo-classes</title>
+  <style>
+
+    /* 1. LINK STATES
+          These 4 must always be in this exact order */
+    a:link    { color: blue; }           /* unvisited link */
+    a:visited { color: purple; }         /* already clicked link */
+    a:hover   { color: #e94560; text-decoration: none; } /* mouse over */
+    a:active  { color: red; }            /* while being clicked */
+
+    /* 2. FORM STATES */
+
+    /* :focus — when you click inside an input */
+    input:focus {
+      outline: none;
+      border: 2px solid #e94560;
+      box-shadow: 0 0 6px rgba(233,69,96,0.4);
+    }
+
+    /* :checked — when a checkbox or radio is ticked */
+    input[type="checkbox"]:checked + label {
+      color: green;
+      font-weight: bold;
+    }
+
+    /* :disabled — when an input is disabled */
+    input:disabled {
+      background: #eee;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    /* 3. STRUCTURAL PSEUDO-CLASSES */
+
+    /* :first-child — first li in the list */
+    li:first-child {
+      color: #e94560;
+      font-weight: bold;
+    }
+
+    /* :last-child — last li in the list */
+    li:last-child {
+      color: gray;
+      font-style: italic;
+    }
+
+    /* :nth-child(2) — exactly the second li */
+    li:nth-child(2) {
+      background: #e8f4fd;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* :nth-child(odd) — every odd li */
+    .striped li:nth-child(odd) {
+      background: #f0f0f0;
+      padding: 4px 8px;
+    }
+
+    /* 4. CONTENT BASED PSEUDO-CLASSES */
+
+    /* :empty — targets elements with no content inside */
+    .empty-box:empty {
+      background: #ffe0e0;
+      border: 2px dashed red;
+      height: 40px;
+      border-radius: 4px;
+    }
+
+    /* :not() — targets all p's EXCEPT ones with class="skip" */
+    p:not(.skip) {
+      border-left: 3px solid #e94560;
+      padding-left: 10px;
+    }
+
+    /* Hover on a box */
+    .hover-box {
+      padding: 15px;
+      background: #eee;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin: 8px 0;
+    }
+    .hover-box:hover {
+      background: #e94560;
+      color: white;
+      transform: translateX(10px);
+    }
+
+    /* General styles */
+    body { padding: 30px; font-family: Arial; line-height: 2; }
+    h2 { color: #e94560; margin: 25px 0 10px; border-bottom: 2px solid #e94560; padding-bottom: 5px; }
+    input { padding: 8px; border: 2px solid #ccc; border-radius: 4px; margin: 5px 0; display: block; }
+    ul { padding-left: 20px; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 5 - Pseudo-classes</h1>
+
+  <!-- LINK STATES -->
+  <h2>1. Link States</h2>
+  <a href="https://uet.edu.pk">UET Peshawar — hover over me!</a><br>
+  <a href="https://google.com">Google — click me to see :active then :visited!</a>
+
+  <!-- FORM STATES -->
+  <h2>2. Form States</h2>
+  <input type="text" placeholder="Click me to see :focus glow">
+  <input type="text" placeholder="Click me too!">
+  <input type="text" disabled placeholder="This is disabled — :disabled">
+  <br>
+  <input type="checkbox" id="check1">
+  <label for="check1">Check me to see :checked turn green!</label>
+
+  <!-- STRUCTURAL -->
+  <h2>3. Structural Pseudo-classes</h2>
+  <p>Normal list with :first-child, :last-child, :nth-child</p>
+  <ul>
+    <li>First item — red and bold (:first-child)</li>
+    <li>Second item — blue background (:nth-child(2))</li>
+    <li>Third item — normal</li>
+    <li>Last item — gray italic (:last-child)</li>
+  </ul>
+
+  <p>Striped list using :nth-child(odd)</p>
+  <ul class="striped">
+    <li>Item 1 — gray background</li>
+    <li>Item 2 — white</li>
+    <li>Item 3 — gray background</li>
+    <li>Item 4 — white</li>
+  </ul>
+
+  <!-- HOVER BOX -->
+  <h2>:hover on a div</h2>
+  <div class="hover-box">Hover over me — I slide right and turn red!</div>
+
+  <!-- CONTENT BASED -->
+  <h2>4. :empty and :not()</h2>
+  <p>This div is empty — :empty gives it a red dashed border</p>
+  <div class="empty-box"></div>
+
+  <br>
+  <p>This paragraph gets a red left border — :not(.skip) targets it</p>
+  <p class="skip">This paragraph is SKIPPED — it has class="skip" so :not() ignores it</p>
+  <p>This one also gets the red border — :not(.skip)</p>
+
+</body>
+</html>

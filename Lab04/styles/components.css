@@ -1,0 +1,122 @@
+/* ===== BUTTONS ===== 
+   We make 9 different button styles.
+   Each button has a base .btn class for shared styles
+   and a second class like .btn-primary for its unique color */
+
+.btn {
+  padding: 10px 22px;        /* space inside the button */
+  border: none;              /* remove default border */
+  border-radius: 5px;        /* slightly rounded corners */
+  cursor: pointer;           /* hand cursor on hover */
+  font-size: 0.95rem;
+  transition: all 0.3s ease; /* smooth hover animation */
+  margin: 5px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);              /* lifts up on hover */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);  /* shadow appears */
+}
+
+.btn:disabled {
+  opacity: 0.5;          /* faded look */
+  cursor: not-allowed;   /* shows X cursor */
+  transform: none;       /* no lift effect */
+}
+
+.btn-primary   { background: #e94560; color: white; }
+.btn-secondary { background: #0f3460; color: white; }
+.btn-outline   { background: transparent; border: 2px solid #e94560; color: #e94560; }
+.btn-danger    { background: #c0392b; color: white; }
+.btn-large     { padding: 15px 35px; font-size: 1.1rem; background: #1a1a2e; color: white; }
+.btn-small     { padding: 6px 14px; font-size: 0.8rem; background: #888; color: white; }
+.btn-rounded   { border-radius: 50px; background: #11998e; color: white; }
+.btn-gradient  { background: linear-gradient(to right, #e94560, #0f3460); color: white; border-radius: 50px; }
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;  /* wraps to next line if too wide */
+  gap: 10px;
+}
+
+/* ===== CARDS =====
+   Cards are boxes with an image area, title, text and a button.
+   They lift up when you hover over them. */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;   /* hides anything outside the rounded corners */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);                   /* lifts up */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);      /* bigger shadow */
+}
+
+.card-img {
+  height: 160px;
+  width: 100%;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* ===== FORM =====
+   Styles the registration form inputs and labels.
+   The blue glow on click is called a focus state. */
+
+.form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 550px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+/* When you click on an input, it glows red */
+.form-input:focus {
+  border-color: #e94560;
+  box-shadow: 0 0 0 3px rgba(233,69,96,0.15);
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 4 - Combinators</title>
+  <style>
+
+    /* 1. Descendant combinator (space)
+          Targets ANY p inside .container, even deeply nested ones */
+    .container p {
+      background: #e8f0ff;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    /* 2. Child combinator (>)
+          Targets ONLY direct h3 children of .container
+          NOT grandchildren */
+    .container > h3 {
+      color: purple;
+      border-left: 4px solid purple;
+      padding-left: 10px;
+    }
+
+    /* 3. Adjacent sibling combinator (+)
+          Targets the p that comes IMMEDIATELY after an h3 */
+    h3 + p {
+      font-style: italic;
+      color: #e94560;
+    }
+
+    /* 4. General sibling combinator (~)
+          Targets ALL p's that come after an h3 (not just the first one) */
+    h3 ~ p {
+      margin-left: 25px;
+      border-left: 2px solid #ccc;
+      padding-left: 10px;
+    }
+
+    /* General styles */
+    body { padding: 30px; font-family: Arial; }
+    h2 { color: #e94560; margin: 25px 0 10px; border-bottom: 2px solid #e94560; padding-bottom: 5px; }
+    .container { border: 2px dashed #aaa; padding: 20px; border-radius: 8px; margin: 10px 0; }
+    .nested { background: #fff3e0; padding: 10px; border-radius: 4px; margin-top: 10px; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 4 - Combinators</h1>
+
+  <!-- DESCENDANT and CHILD combinator demo -->
+  <h2>1. Descendant ( ) and 2. Child ( > )</h2>
+  <div class="container">
+
+    <!-- Child combinator targets this h3 directly inside .container -->
+    <h3>Direct child h3 — purple (child combinator)</h3>
+
+    <!-- Descendant combinator targets this p -->
+    <p>Direct child p — blue background (descendant combinator)</p>
+
+    <div class="nested">
+      <!-- This h3 is a grandchild — child combinator won't target it -->
+      <h3>Grandchild h3 — NOT purple (child combinator skips this)</h3>
+      <!-- This p is also a grandchild — descendant combinator STILL targets it -->
+      <p>Grandchild p — still gets blue background (descendant goes deep)</p>
+    </div>
+
+  </div>
+
+  <!-- ADJACENT and GENERAL sibling demo -->
+  <h2>3. Adjacent Sibling ( + ) and 4. General Sibling ( ~ )</h2>
+  <div class="container">
+
+    <h3>This is the h3</h3>
+
+    <!-- Adjacent sibling — immediately after h3, so it's italic red -->
+    <p>First p after h3 — italic red (adjacent sibling +)</p>
+
+    <!-- General sibling — comes after h3, so it's indented -->
+    <p>Second p after h3 — indented (general sibling ~)</p>
+
+    <!-- General sibling — also comes after h3, also indented -->
+    <p>Third p after h3 — also indented (general sibling ~)</p>
+
+  </div>
+
+</body>
+</html>

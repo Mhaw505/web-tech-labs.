@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Images Exercises 12 & 13</title>
+  <style>
+
+    /* Base image style */
+    .img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;  /* makes image fill the box without stretching */
+      display: block;
+    }
+
+    /* ==============================
+       EXERCISE 12 - Basic Image Styling
+       ============================== */
+
+    /* 1. Dimensions */
+    .img-small  { width: 80px;  height: 80px; }
+    .img-medium { width: 150px; height: 150px; }
+    .img-large  { width: 220px; height: 150px; }
+
+    /* 2. Borders and border radius */
+    .img-border  { border: 4px solid #e94560; }
+    .img-rounded { border-radius: 15px; }
+    .img-circle  { border-radius: 50%; }
+
+    /* 3. Basic filters */
+    .filter-gray   { filter: grayscale(100%); }
+    .filter-blur   { filter: blur(3px); }
+    .filter-bright { filter: brightness(1.5); }
+    .filter-sepia  { filter: sepia(100%); }
+
+
+    /* ==============================
+       EXERCISE 13 - Advanced Image Effects
+       ============================== */
+
+    /* 1. Hover scale and rotate */
+    .img-hover {
+      transition: all 0.4s ease;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    .img-hover:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    /* 2. Grayscale to color on hover */
+    .img-color-hover {
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    .img-color-hover:hover { filter: grayscale(0%); }
+
+    /* 3. Image overlay on hover */
+    .img-wrapper {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      display: inline-block;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .img-wrapper:hover img { transform: scale(1.1); }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(233, 69, 96, 0.8);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .img-wrapper:hover .overlay { opacity: 1; }
+
+    /* 4. Clip path — diamond shape */
+    .img-clip {
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    /* General styles */
+    body { padding: 30px; background: #f9f9f9; font-family: Arial; }
+    h1   { color: #e94560; margin-bottom: 5px; }
+    h2   { color: #0f3460; border-bottom: 2px solid #e94560; padding-bottom: 5px; margin: 25px 0 12px; }
+    .demo { background: white; padding: 20px; border-radius: 8px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .row  { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; margin: 10px 0; }
+    strong { display: block; margin: 15px 0 8px; color: #333; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Images — Exercises 12 & 13</h1>
+
+  <!-- EXERCISE 12 -->
+  <h2>Exercise 12 — Basic Image Styling</h2>
+  <div class="demo">
+
+    <strong>1. Dimensions</strong>
+    <div class="row">
+      <img src="../images/foto.jpg" class="img img-small" alt="small">
+      <img src="../images/foto.jpg" class="img img-medium" alt="medium">
+      <img src="../images/foto.jpg" class="img img-large" alt="large">
+    </div>
+
+    <strong>2. Borders and Border Radius</strong>
+    <div class="row">
+      <img src="../images/foto.jpg" class="img img-medium img-border" alt="border">
+      <img src="../images/foto.jpg" class="img img-medium img-rounded" alt="rounded">
+      <img src="../images/foto.jpg" class="img img-medium img-circle" alt="circle">
+    </div>
+
+    <strong>3. Basic Filters</strong>
+    <div class="row">
+      <img src="../images/foto.jpg" class="img img-medium filter-gray" alt="grayscale">
+      <img src="../images/foto.jpg" class="img img-medium filter-blur" alt="blur">
+      <img src="../images/foto.jpg" class="img img-medium filter-bright" alt="brightness">
+      <img src="../images/foto.jpg" class="img img-medium filter-sepia" alt="sepia">
+    </div>
+
+  </div>
+
+  <!-- EXERCISE 13 -->
+  <h2>Exercise 13 — Advanced Image Effects</h2>
+  <div class="demo">
+
+    <strong>1. Hover — Scale and Rotate</strong>
+    <div class="row">
+      <img src="../images/foto.jpg" class="img img-medium img-hover" alt="hover">
+    </div>
+
+    <strong>2. Grayscale to Color on Hover</strong>
+    <div class="row">
+      <img src="../images/foto.jpg" class="img img-medium img-color-hover" alt="color hover">
+    </div>
+
+    <strong>3. Image Overlay on Hover</strong>
+    <div class="row">
+      <div class="img-wrapper">
+        <img src="../images/foto.jpg" alt="overlay 1">
+        <div class="overlay">View Photo</div>
+      </div>
+      <div class="img-wrapper">
+        <img src="../images/foto.jpg" alt="overlay 2">
+        <div class="overlay">Learn More</div>
+      </div>
+    </div>
+
+    <strong>4. Clip Path — Diamond Shape</strong>
+    <div class="row">
+      <img src="../images/foto.jpg" class="img img-medium img-clip" alt="diamond">
+    </div>
+
+  </div>
+
+</body>
+</html>

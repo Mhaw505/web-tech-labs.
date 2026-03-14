@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 8 - Navigation Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ==============================
+       HORIZONTAL NAVIGATION
+       ============================== */
+
+    .navbar {
+      background: #1a1a2e;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      color: #e94560;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 15px 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      padding: 20px 15px;
+      display: block;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    /* Hover state */
+    .nav-links a:hover {
+      color: white;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Active state */
+    .nav-links a.active {
+      color: white;
+      border-bottom: 3px solid #e94560;
+    }
+
+    /* ==============================
+       DROPDOWN MENU
+       ============================== */
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #16213e;
+      list-style: none;
+      padding: 8px 0;
+      min-width: 180px;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      z-index: 200;
+    }
+
+    .dropdown-menu a {
+      padding: 10px 20px !important;
+      color: #ccc !important;
+      font-size: 0.9rem !important;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(233,69,96,0.2) !important;
+      color: #e94560 !important;
+      padding-left: 25px !important;
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown > a::after {
+      content: " ▾";
+      font-size: 0.8rem;
+    }
+
+    /* ==============================
+       VERTICAL NAVIGATION
+       ============================== */
+
+    .sidebar {
+      width: 220px;
+      background: #1a1a2e;
+      border-radius: 10px;
+      padding: 15px 0;
+      margin: 30px 0;
+    }
+
+    .sidebar-title {
+      color: #e94560;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 10px 20px;
+    }
+
+    .sidebar-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-links a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      padding: 12px 20px;
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+      font-size: 0.95rem;
+    }
+
+    .sidebar-links a:hover {
+      color: white;
+      background: rgba(255,255,255,0.05);
+      border-left-color: #e94560;
+      padding-left: 25px;
+    }
+
+    .sidebar-links a.active {
+      color: white;
+      background: rgba(233,69,96,0.15);
+      border-left-color: #e94560;
+    }
+
+    /* ==============================
+       BREADCRUMB NAVIGATION
+       ============================== */
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin: 20px 0;
+    }
+
+    .breadcrumb a {
+      color: #0f3460;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .breadcrumb a:hover { color: #e94560; }
+
+    .breadcrumb span {
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb .separator { color: #ccc; }
+
+    /* General styles */
+    body { background: #f0f2f5; font-family: 'Lato', sans-serif; margin: 0; }
+    .content { padding: 30px; }
+    h2 { color: #0f3460; border-bottom: 2px solid #e94560; padding-bottom: 5px; margin: 25px 0 12px; }
+    p.subtitle { color: gray; }
+
+  </style>
+</head>
+<body>
+
+  <!-- HORIZONTAL NAVBAR WITH DROPDOWN -->
+  <nav class="navbar">
+    <div class="nav-logo">CS 224L</div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Courses</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Web Technologies</a></li>
+          <li><a href="#">Programming</a></li>
+          <li><a href="#">Databases</a></li>
+          <li><a href="#">Networking</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+
+    <h2>Horizontal Navigation — with Dropdown</h2>
+    <p>Hover over <strong>Courses</strong> in the navbar above to see the dropdown menu!</p>
+
+    <!-- BREADCRUMB -->
+    <h2>Breadcrumb Navigation</h2>
+    <div class="breadcrumb">
+      <a href="#">Home</a>
+      <span class="separator">›</span>
+      <a href="#">Courses</a>
+      <span class="separator">›</span>
+      <a href="#">Web Technologies</a>
+      <span class="separator">›</span>
+      <span>Lab 03</span>
+    </div>
+
+    <!-- VERTICAL SIDEBAR -->
+    <h2>Vertical Navigation (Sidebar)</h2>
+    <div class="sidebar">
+      <div class="sidebar-title">Menu</div>
+      <ul class="sidebar-links">
+        <li><a href="#" class="active">🏠 Dashboard</a></li>
+        <li><a href="#">📚 Courses</a></li>
+        <li><a href="#">📝 Assignments</a></li>
+        <li><a href="#">📊 Grades</a></li>
+        <li><a href="#">👤 Profile</a></li>
+        <li><a href="#">⚙️ Settings</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>

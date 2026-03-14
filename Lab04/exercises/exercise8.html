@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8 - Text Styling</title>
+  <style>
+
+    /* 1. TEXT COLOR AND OPACITY */
+
+    .color-hex  { color: #e94560; }               /* hex color */
+    .color-rgb  { color: rgb(15, 52, 96); }        /* rgb color */
+    .color-hsl  { color: hsl(210, 73%, 40%); }     /* hsl color */
+    .color-rgba { color: rgba(233, 69, 96, 0.4); } /* rgba — 40% opacity */
+
+
+    /* 2. TEXT ALIGNMENT */
+
+    .align-left   { text-align: left; }
+    .align-center { text-align: center; }
+    .align-right  { text-align: right; }
+    .align-justify {
+      text-align: justify;   /* spreads text evenly across the line */
+      max-width: 400px;
+    }
+
+
+    /* 3. TEXT DECORATION */
+
+    .deco-underline  { text-decoration: underline; }
+    .deco-overline   { text-decoration: overline; }
+    .deco-strike     { text-decoration: line-through; }
+    .deco-none       { text-decoration: none; }  /* removes underline from links */
+
+    /* colored underline */
+    .deco-colored {
+      text-decoration: underline;
+      text-decoration-color: #e94560;
+      text-decoration-thickness: 3px;
+    }
+
+
+    /* 4. TEXT TRANSFORMATION */
+
+    .upper    { text-transform: uppercase; }
+    .lower    { text-transform: lowercase; }
+    .cap      { text-transform: capitalize; } /* first letter of each word */
+
+
+    /* 5. TEXT SHADOW
+          text-shadow: horizontal vertical blur color  */
+
+    .shadow-basic {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      font-size: 1.5rem;
+    }
+
+    .shadow-colored {
+      text-shadow: 3px 3px 6px #e94560;
+      font-size: 1.5rem;
+      color: #0f3460;
+    }
+
+    .shadow-glow {
+      text-shadow: 0 0 10px #e94560, 0 0 20px #e94560;
+      color: #e94560;
+      font-size: 1.5rem;
+    }
+
+    .shadow-multiple {
+      /* multiple shadows separated by commas */
+      text-shadow: 2px 2px 0 #0f3460, 4px 4px 0 #e94560;
+      font-size: 1.5rem;
+      color: white;
+      background: #1a1a2e;
+      padding: 10px 15px;
+      display: inline-block;
+      border-radius: 6px;
+    }
+
+    /* General styles */
+    body { padding: 30px; font-family: Arial; line-height: 2; background: #f9f9f9; }
+    h2 { color: #e94560; margin: 25px 0 10px; border-bottom: 2px solid #e94560; padding-bottom: 5px; }
+    p  { margin: 8px 0; font-size: 1.1rem; }
+    .demo { background: white; padding: 15px; border-radius: 8px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    a  { color: blue; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 8 - Text Styling</h1>
+
+  <!-- TEXT COLOR -->
+  <h2>1. Text Color and Opacity</h2>
+  <div class="demo">
+    <p class="color-hex">color: #e94560 — HEX color</p>
+    <p class="color-rgb">color: rgb(15, 52, 96) — RGB color</p>
+    <p class="color-hsl">color: hsl(210, 73%, 40%) — HSL color</p>
+    <p class="color-rgba">color: rgba(233, 69, 96, 0.4) — RGBA (faded, 40% opacity)</p>
+  </div>
+
+  <!-- TEXT ALIGNMENT -->
+  <h2>2. Text Alignment</h2>
+  <div class="demo">
+    <p class="align-left">text-align: left — this is the default</p>
+    <p class="align-center">text-align: center — centered text</p>
+    <p class="align-right">text-align: right — right aligned</p>
+    <p class="align-justify">text-align: justify — this text is spread evenly across the full width of the line so both left and right edges are straight like a newspaper column.</p>
+  </div>
+
+  <!-- TEXT DECORATION -->
+  <h2>3. Text Decoration</h2>
+  <div class="demo">
+    <p class="deco-underline">text-decoration: underline</p>
+    <p class="deco-overline">text-decoration: overline</p>
+    <p class="deco-strike">text-decoration: line-through</p>
+    <p class="deco-colored">text-decoration colored red with thickness</p>
+    <p><a href="#" class="deco-none">This link has no underline — text-decoration: none</a></p>
+  </div>
+
+  <!-- TEXT TRANSFORMATION -->
+  <h2>4. Text Transformation</h2>
+  <div class="demo">
+    <p class="upper">text-transform: uppercase — makes everything capital</p>
+    <p class="lower">TEXT-TRANSFORM: LOWERCASE — MAKES EVERYTHING SMALL</p>
+    <p class="cap">text-transform: capitalize — first letter of each word</p>
+  </div>
+
+  <!-- TEXT SHADOW -->
+  <h2>5. Text Shadow</h2>
+  <div class="demo">
+    <p class="shadow-basic">Basic drop shadow</p>
+    <p class="shadow-colored">Colored red shadow</p>
+    <p class="shadow-glow">Glowing text effect</p>
+    <p class="shadow-multiple">Multiple layered shadows</p>
+  </div>
+
+</body>
+</html>

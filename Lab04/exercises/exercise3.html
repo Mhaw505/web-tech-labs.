@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 3 - Attribute Selectors</title>
+  <style>
+
+    /* 1. Has attribute — targets any input that HAS a type attribute */
+    input[type] {
+      padding: 8px;
+      margin: 8px 0;
+      display: block;
+      border: 2px solid gray;
+      border-radius: 4px;
+    }
+
+    /* 2. Exact value — targets ONLY inputs where type is exactly "text" */
+    input[type="text"] {
+      border-color: blue;
+      background: #e8f0ff;
+    }
+
+    /* 3. Exact value — targets ONLY inputs where type is exactly "email" */
+    input[type="email"] {
+      border-color: green;
+      background: #e8ffe8;
+    }
+
+    /* 4. Partial match — targets links that contain "uet" ANYWHERE in href */
+    a[href*="uet"] {
+      color: green;
+      font-weight: bold;
+    }
+
+    /* 5. Starts with — targets links whose href STARTS with "https" */
+    a[href^="https"] {
+      text-decoration: none;
+      border-bottom: 2px solid orange;
+    }
+
+    /* 6. Ends with — targets links whose href ENDS with ".pk" */
+    a[href$=".pk"] {
+      color: darkred;
+    }
+
+    /* General styles */
+    body { padding: 30px; font-family: Arial; }
+    h2 { color: #e94560; margin: 20px 0 10px; }
+    a { display: block; margin: 8px 0; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 3 - Attribute Selectors</h1>
+
+  <h2>Input Attribute Selectors</h2>
+
+  <!-- input[type] matches all of these -->
+  <!-- input[type="text"] matches only this one — blue border -->
+  <input type="text" placeholder="type=text → blue border">
+
+  <!-- input[type="email"] matches only this one — green border -->
+  <input type="email" placeholder="type=email → green border">
+
+  <!-- input[type] matches this too — gray border -->
+  <input type="password" placeholder="type=password → gray border">
+
+  <h2>Link Attribute Selectors</h2>
+
+  <!-- matches [href^="https"] and [href*="uet"] and [href$=".pk"] -->
+  <a href="https://uet.edu.pk">UET Peshawar — matches starts with, contains, and ends with</a>
+
+  <!-- matches only [href^="https"] -->
+  <a href="https://google.com">Google — matches starts with https only</a>
+
+  <!-- matches only [href*="uet"] -->
+  <a href="http://uet.edu.pk">UET http — matches contains "uet" only</a>
+
+</body>
+</html>

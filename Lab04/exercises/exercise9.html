@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 9 - Text Spacing and Layout</title>
+  <style>
+
+    /* 1. LINE HEIGHT
+          Controls vertical space between lines of text
+          Good for readability — 1.5 to 1.8 is ideal for body text */
+
+    .lh-small  { line-height: 1; }     /* tight, lines are cramped */
+    .lh-normal { line-height: 1.6; }   /* comfortable reading */
+    .lh-large  { line-height: 2.5; }   /* very spacious */
+
+
+    /* 2. LETTER SPACING
+          Controls space between individual characters */
+
+    .ls-tight  { letter-spacing: -2px; }   /* letters closer together */
+    .ls-normal { letter-spacing: 0; }      /* default */
+    .ls-wide   { letter-spacing: 4px; }    /* letters further apart */
+    .ls-wider  { letter-spacing: 8px; }    /* very spread out */
+
+
+    /* 3. WORD SPACING
+          Controls space between words */
+
+    .ws-tight  { word-spacing: -4px; }   /* words closer together */
+    .ws-normal { word-spacing: 0; }      /* default */
+    .ws-wide   { word-spacing: 15px; }   /* words further apart */
+
+
+    /* 4. TEXT INDENT
+          Indents the first line of a paragraph */
+
+    .indent-sm { text-indent: 20px; }
+    .indent-lg { text-indent: 60px; }
+
+
+    /* 5. WHITE SPACE
+          Controls how spaces and line breaks are handled */
+
+    /* normal — collapses extra spaces (default) */
+    .ws-normal-space { white-space: normal; }
+
+    /* nowrap — text never wraps to next line */
+    .ws-nowrap {
+      white-space: nowrap;
+      background: #ffe0e0;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    /* pre — preserves ALL spaces and line breaks exactly as written */
+    .ws-pre {
+      white-space: pre;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+
+    /* 6. TEXT OVERFLOW
+          What happens when text is too long for its container */
+
+    .overflow-box {
+      width: 250px;
+      border: 2px solid #e94560;
+      padding: 10px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+
+    /* clip — cuts off the text */
+    .overflow-clip {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    /* ellipsis — shows "..." at the end */
+    .overflow-ellipsis {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* General styles */
+    body { padding: 30px; font-family: Arial; background: #f9f9f9; }
+    h2 { color: #e94560; margin: 25px 0 10px; border-bottom: 2px solid #e94560; padding-bottom: 5px; }
+    p  { margin: 8px 0; font-size: 1rem; }
+    .demo { background: white; padding: 15px; border-radius: 8px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .label { font-size: 0.8rem; color: gray; margin-bottom: 3px; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 9 - Text Spacing and Layout</h1>
+
+  <!-- LINE HEIGHT -->
+  <h2>1. Line Height</h2>
+  <div class="demo">
+    <p class="label">line-height: 1 (tight)</p>
+    <p class="lh-small">This paragraph has a very tight line height of 1. The lines are cramped together and hard to read when there is a lot of text like this.</p>
+
+    <br>
+    <p class="label">line-height: 1.6 (comfortable)</p>
+    <p class="lh-normal">This paragraph has a comfortable line height of 1.6. This is the recommended value for body text because it is easy to read.</p>
+
+    <br>
+    <p class="label">line-height: 2.5 (spacious)</p>
+    <p class="lh-large">This paragraph has a very large line height of 2.5. The lines are very far apart and feel very airy and open.</p>
+  </div>
+
+  <!-- LETTER SPACING -->
+  <h2>2. Letter Spacing</h2>
+  <div class="demo">
+    <p class="ls-tight">letter-spacing: -2px — letters are squeezed together</p>
+    <p class="ls-normal">letter-spacing: 0 — default normal spacing</p>
+    <p class="ls-wide">letter-spacing: 4px — letters spread apart</p>
+    <p class="ls-wider">letter-spacing: 8px — very wide spacing</p>
+  </div>
+
+  <!-- WORD SPACING -->
+  <h2>3. Word Spacing</h2>
+  <div class="demo">
+    <p class="ws-tight">word-spacing: -4px — words are closer together</p>
+    <p class="ws-normal">word-spacing: 0 — default normal spacing</p>
+    <p class="ws-wide">word-spacing: 15px — words are far apart</p>
+  </div>
+
+  <!-- TEXT INDENT -->
+  <h2>4. Text Indent</h2>
+  <div class="demo">
+    <p class="indent-sm">text-indent: 20px — the first line of this paragraph is indented by 20 pixels, just like in a book or essay format.</p>
+    <p class="indent-lg">text-indent: 60px — this paragraph has a much larger indent of 60 pixels on the first line only.</p>
+  </div>
+
+  <!-- WHITE SPACE -->
+  <h2>5. White Space</h2>
+  <div class="demo">
+    <p class="label">white-space: nowrap — text stays on one line no matter what</p>
+    <p class="ws-nowrap">This text will never wrap to the next line even if it is very long and goes beyond the screen width.</p>
+
+    <br>
+    <p class="label">white-space: pre — preserves spaces and line breaks</p>
+    <p class="ws-pre">Name:     Ali
+Roll No:  2023-CS-001
+Course:   CS 224L</p>
+  </div>
+
+  <!-- TEXT OVERFLOW -->
+  <h2>6. Text Overflow</h2>
+  <div class="demo">
+    <p class="label">text-overflow: clip — text is cut off</p>
+    <div class="overflow-box overflow-clip">
+      This is a very long text that does not fit inside the box
+    </div>
+
+    <br>
+    <p class="label">text-overflow: ellipsis — shows dots at the end</p>
+    <div class="overflow-box overflow-ellipsis">
+      This is a very long text that does not fit inside the box
+    </div>
+  </div>
+
+</body>
+</html>

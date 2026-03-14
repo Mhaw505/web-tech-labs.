@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 7 - Card Components</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* === CARD GRID === */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    /* === CARD BASE === */
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Hover — card lifts up */
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    /* === CARD IMAGE AREA === */
+    .card-img {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* === CARD BODY === */
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card-body p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* === CARD BADGE === */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .badge-red   { background: #ffe0e6; color: #e94560; }
+    .badge-green { background: #e0fff5; color: #11998e; }
+    .badge-blue  { background: #e0eeff; color: #0f3460; }
+
+    /* === BUTTON === */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #e94560;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #0f3460;
+      transform: translateY(-2px);
+    }
+
+    /* General styles */
+    body { padding: 30px; background: #f0f2f5; font-family: 'Lato', sans-serif; }
+    h1 { color: #e94560; font-family: 'Playfair Display', serif; margin-bottom: 5px; }
+    p.subtitle { color: gray; margin-bottom: 20px; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Task 7 — Card Components</h1>
+  <p class="subtitle">CS 224L Web Technologies — UET Peshawar</p>
+
+  <div class="cards-grid">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-img" style="background: linear-gradient(135deg, #4e54c8, #8f94fb);"></div>
+      <div class="card-body">
+        <span class="badge badge-blue">Design</span>
+        <h3>Web Design</h3>
+        <p>Learn HTML, CSS and modern web design principles to build beautiful websites.</p>
+        <button class="btn">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-img" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></div>
+      <div class="card-body">
+        <span class="badge badge-green">Development</span>
+        <h3>JavaScript</h3>
+        <p>Master JavaScript for building interactive and dynamic web applications.</p>
+        <button class="btn">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-img" style="background: linear-gradient(135deg, #eb3349, #f45c43);"></div>
+      <div class="card-body">
+        <span class="badge badge-red">Responsive</span>
+        <h3>Responsive Design</h3>
+        <p>Build websites that look great on all screen sizes from mobile to desktop.</p>
+        <button class="btn">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <div class="card-img" style="background: linear-gradient(135deg, #fc5c7d, #6a3093);"></div>
+      <div class="card-body">
+        <span class="badge badge-red">Advanced</span>
+        <h3>CSS Animations</h3>
+        <p>Create stunning animations and transitions using pure CSS techniques.</p>
+        <button class="btn">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <div class="card-img" style="background: linear-gradient(135deg, #f7971e, #ffd200);"></div>
+      <div class="card-body">
+        <span class="badge badge-blue">Backend</span>
+        <h3>Node.js</h3>
+        <p>Build powerful server-side applications using Node.js and Express framework.</p>
+        <button class="btn">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <div class="card-img" style="background: linear-gradient(135deg, #1a1a2e, #0f3460);"></div>
+      <div class="card-body">
+        <span class="badge badge-green">Database</span>
+        <h3>SQL Basics</h3>
+        <p>Learn database management and SQL queries for web applications.</p>
+        <button class="btn">Learn More</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

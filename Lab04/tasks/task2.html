@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 2 - Typography Showcase</title>
+
+  <!-- 3 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* === 3 GOOGLE FONTS === */
+    .font-playfair { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
+    .font-lato     { font-family: 'Lato', sans-serif; font-size: 1.8rem; }
+    .font-code     { font-family: 'Source Code Pro', monospace; font-size: 1.8rem; }
+
+    /* === FONT SIZES — different units === */
+    .size-px  { font-size: 28px; }
+    .size-em  { font-size: 1.8em; }
+    .size-rem { font-size: 1.8rem; }
+    .size-pct { font-size: 150%; }
+    .size-sm  { font-size: 0.8rem; }
+
+    /* === TEXT ALIGNMENT === */
+    .t-left    { text-align: left; }
+    .t-center  { text-align: center; }
+    .t-right   { text-align: right; }
+    .t-justify { text-align: justify; max-width: 500px; }
+
+    /* === TEXT DECORATION === */
+    .underline { text-decoration: underline; }
+    .strike    { text-decoration: line-through; }
+    .overline  { text-decoration: overline; }
+
+    /* === TEXT TRANSFORMATION === */
+    .upper { text-transform: uppercase; letter-spacing: 3px; }
+    .lower { text-transform: lowercase; }
+    .cap   { text-transform: capitalize; }
+
+    /* === TEXT SHADOW === */
+    .shadow-1 { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); font-size: 1.5rem; }
+    .shadow-2 { text-shadow: 3px 3px 0 #e94560; font-size: 1.5rem; color: #0f3460; }
+    .shadow-3 { text-shadow: 0 0 10px #e94560; color: #e94560; font-size: 1.5rem; }
+    .shadow-4 {
+      text-shadow: 2px 2px 0 #0f3460, 4px 4px 0 #e94560;
+      font-size: 1.5rem;
+      color: white;
+      background: #1a1a2e;
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 6px;
+    }
+
+    /* General styles */
+    body { padding: 30px; background: #f9f9f9; font-family: Arial; line-height: 1.8; }
+    h1   { color: #e94560; margin-bottom: 5px; font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+    h2   { color: #0f3460; border-bottom: 2px solid #e94560; padding-bottom: 5px; margin: 25px 0 12px; }
+    p    { margin: 8px 0; font-size: 1rem; }
+    .demo { background: white; padding: 20px; border-radius: 8px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    hr   { border: none; border-top: 1px solid #eee; margin: 12px 0; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Task 2 — Typography Showcase</h1>
+  <p style="color:gray;">CS 224L Web Technologies — UET Peshawar</p>
+
+  <!-- GOOGLE FONTS -->
+  <h2>3 Google Fonts</h2>
+  <div class="demo">
+    <p class="font-playfair">Playfair Display — elegant serif font</p>
+    <p class="font-lato">Lato — clean modern sans-serif font</p>
+    <p class="font-code">Source Code Pro — monospace font</p>
+  </div>
+
+  <!-- FONT SIZES -->
+  <h2>Font Sizes — Different Units</h2>
+  <div class="demo">
+    <p class="size-px">font-size: 28px — pixels</p>
+    <p class="size-em">font-size: 1.8em — relative to parent</p>
+    <p class="size-rem">font-size: 1.8rem — relative to root</p>
+    <p class="size-pct">font-size: 150% — percentage</p>
+    <p class="size-sm">font-size: 0.8rem — small text</p>
+  </div>
+
+  <!-- TEXT ALIGNMENT -->
+  <h2>Text Alignment</h2>
+  <div class="demo">
+    <p class="t-left">text-align: left — default alignment</p>
+    <p class="t-center">text-align: center — centered text</p>
+    <p class="t-right">text-align: right — right aligned</p>
+    <p class="t-justify">text-align: justify — this text is spread evenly across the full width of the line so both edges are straight just like a newspaper column layout.</p>
+  </div>
+
+  <!-- TEXT DECORATION -->
+  <h2>Text Decoration</h2>
+  <div class="demo">
+    <p class="underline">text-decoration: underline</p>
+    <p class="strike">text-decoration: line-through</p>
+    <p class="overline">text-decoration: overline</p>
+  </div>
+
+  <!-- TEXT TRANSFORMATION -->
+  <h2>Text Transformation</h2>
+  <div class="demo">
+    <p class="upper">text-transform: uppercase with letter spacing</p>
+    <p class="lower">TEXT-TRANSFORM: LOWERCASE CONVERTS THIS</p>
+    <p class="cap">text-transform: capitalize each word here</p>
+  </div>
+
+  <!-- TEXT SHADOW -->
+  <h2>Text Shadow Effects</h2>
+  <div class="demo">
+    <p class="shadow-1">Basic drop shadow</p>
+    <p class="shadow-2">Colored red shadow</p>
+    <p class="shadow-3">Glowing text effect</p>
+    <p class="shadow-4">Multiple layered shadows</p>
+  </div>
+
+</body>
+</html>

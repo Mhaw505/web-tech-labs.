@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 03 - CSS Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">CS 226L</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="exercises/selectors.html">Selectors</a></li>
+      <li><a href="exercises/typography.html">Typography</a></li>
+      <li><a href="exercises/backgrounds.html">Backgrounds</a></li>
+      <li><a href="exercises/images.html">Images</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>CSS Lab 03 Showcase</h1>
+    <p>CS 226L Web Technologies — UET Peshawar</p>
+  </header>
+
+  <section class="section" id="buttons">
+    <h2>Button Collection</h2>
+    <div class="button-group">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-outline">Outline</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-large">Large</button>
+      <button class="btn btn-small">Small</button>
+      <button class="btn btn-rounded">Rounded</button>
+      <button class="btn btn-gradient">Gradient</button>
+      <button class="btn" disabled>Disabled</button>
+    </div>
+  </section>
+
+  <section class="section" id="cards">
+    <h2>Card Components</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-img" style="background:#4e54c8;"></div>
+        <div class="card-body">
+          <h3>Web Design</h3>
+          <p>Learn HTML, CSS and modern web design.</p>
+          <button class="btn btn-primary">Learn More</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background:#11998e;"></div>
+        <div class="card-body">
+          <h3>JavaScript</h3>
+          <p>Master JavaScript for interactive apps.</p>
+          <button class="btn btn-primary">Learn More</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background:#eb3349;"></div>
+        <div class="card-body">
+          <h3>Responsive Design</h3>
+          <p>Build websites for all screen sizes.</p>
+          <button class="btn btn-primary">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="form">
+    <h2>Registration Form</h2>
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your name" class="form-input">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" class="form-input">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Enter password" class="form-input">
+        </div>
+        <div class="form-group">
+          <label>Course</label>
+          <select class="form-input">
+            <option>CS 226L Web Technologies</option>
+            <option>CS 101 Programming</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>CS 226L — Mr. Mohammad, Lecturer — UET Peshawar</p>
+  </footer>
+
+</body>
+</html>

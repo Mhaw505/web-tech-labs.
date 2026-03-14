@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typography Exercises 7, 8, 9</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* ==============================
+       EXERCISE 7 - Font Properties
+       ============================== */
+
+    /* 1. Google Font 1 */
+    .font-playfair { font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+
+    /* 2. Google Font 2 */
+    .font-lato { font-family: 'Lato', sans-serif; font-size: 1.5rem; }
+
+    /* 3. Google Font 3 */
+    .font-code { font-family: 'Source Code Pro', monospace; font-size: 1.5rem; }
+
+    /* 4. Font sizes */
+    .size-px  { font-size: 24px; }
+    .size-em  { font-size: 1.5em; }
+    .size-rem { font-size: 1.5rem; }
+    .size-pct { font-size: 150%; }
+
+    /* 5. Font weights */
+    .w-300 { font-weight: 300; font-family: 'Lato', sans-serif; }
+    .w-400 { font-weight: 400; font-family: 'Lato', sans-serif; }
+    .w-700 { font-weight: 700; font-family: 'Lato', sans-serif; }
+
+    /* 6. Font style and variant */
+    .italic      { font-style: italic; }
+    .small-caps  { font-variant: small-caps; }
+
+
+    /* ==============================
+       EXERCISE 8 - Text Styling
+       ============================== */
+
+    /* 1. Colors */
+    .color-hex  { color: #e94560; }
+    .color-rgb  { color: rgb(15, 52, 96); }
+    .color-rgba { color: rgba(233, 69, 96, 0.5); }
+
+    /* 2. Alignment */
+    .t-left    { text-align: left; }
+    .t-center  { text-align: center; }
+    .t-right   { text-align: right; }
+
+    /* 3. Decoration */
+    .underline { text-decoration: underline; }
+    .strike    { text-decoration: line-through; }
+
+    /* 4. Transformation */
+    .upper { text-transform: uppercase; }
+    .lower { text-transform: lowercase; }
+    .cap   { text-transform: capitalize; }
+
+    /* 5. Text shadows */
+    .shadow-basic   { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); font-size: 1.3rem; }
+    .shadow-colored { text-shadow: 3px 3px 0 #e94560; font-size: 1.3rem; }
+    .shadow-glow    { text-shadow: 0 0 10px #e94560; color: #e94560; font-size: 1.3rem; }
+
+
+    /* ==============================
+       EXERCISE 9 - Text Spacing
+       ============================== */
+
+    /* 1. Line height */
+    .lh-small  { line-height: 1; background: #fff3f3; padding: 8px; }
+    .lh-normal { line-height: 1.6; background: #f3fff3; padding: 8px; }
+    .lh-large  { line-height: 2.5; background: #f3f3ff; padding: 8px; }
+
+    /* 2. Letter spacing */
+    .ls-tight { letter-spacing: -2px; }
+    .ls-wide  { letter-spacing: 5px; }
+
+    /* 3. Word spacing */
+    .ws-wide { word-spacing: 15px; }
+
+    /* 4. Text indent */
+    .indent { text-indent: 40px; }
+
+    /* 5. Text overflow */
+    .overflow {
+      width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 2px solid #e94560;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+
+    /* General styles */
+    body { padding: 30px; background: #f9f9f9; font-family: Arial; line-height: 1.8; }
+    h1   { color: #e94560; margin-bottom: 5px; }
+    h2   { color: #0f3460; border-bottom: 2px solid #e94560; padding-bottom: 5px; margin: 25px 0 12px; }
+    p    { margin: 6px 0; }
+    .demo { background: white; padding: 15px; border-radius: 8px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+  </style>
+</head>
+<body>
+
+  <h1>Typography — Exercises 7, 8 & 9</h1>
+
+  <!-- EXERCISE 7 -->
+  <h2>Exercise 7 — Font Properties</h2>
+  <div class="demo">
+    <p class="font-playfair">Playfair Display — Google Font 1</p>
+    <p class="font-lato">Lato — Google Font 2</p>
+    <p class="font-code">Source Code Pro — Google Font 3</p>
+    <hr>
+    <p class="size-px">font-size: 24px</p>
+    <p class="size-em">font-size: 1.5em</p>
+    <p class="size-rem">font-size: 1.5rem</p>
+    <p class="size-pct">font-size: 150%</p>
+    <hr>
+    <p class="w-300">font-weight: 300 — Light</p>
+    <p class="w-400">font-weight: 400 — Normal</p>
+    <p class="w-700">font-weight: 700 — Bold</p>
+    <hr>
+    <p class="italic">font-style: italic</p>
+    <p class="small-caps">font-variant: small-caps — This Looks Like This</p>
+  </div>
+
+  <!-- EXERCISE 8 -->
+  <h2>Exercise 8 — Text Styling</h2>
+  <div class="demo">
+    <p class="color-hex">color: #e94560 — HEX</p>
+    <p class="color-rgb">color: rgb(15, 52, 96) — RGB</p>
+    <p class="color-rgba">color: rgba — transparent</p>
+    <hr>
+    <p class="t-left">text-align: left</p>
+    <p class="t-center">text-align: center</p>
+    <p class="t-right">text-align: right</p>
+    <hr>
+    <p class="underline">text-decoration: underline</p>
+    <p class="strike">text-decoration: line-through</p>
+    <hr>
+    <p class="upper">text-transform: uppercase</p>
+    <p class="lower">TEXT-TRANSFORM: LOWERCASE</p>
+    <p class="cap">text-transform: capitalize each word</p>
+    <hr>
+    <p class="shadow-basic">Basic drop shadow</p>
+    <p class="shadow-colored">Colored shadow</p>
+    <p class="shadow-glow">Glowing text</p>
+  </div>
+
+  <!-- EXERCISE 9 -->
+  <h2>Exercise 9 — Text Spacing</h2>
+  <div class="demo">
+    <p class="lh-small">line-height: 1 — tight. The lines are very close together and hard to read when there is a lot of text.</p>
+    <p class="lh-normal">line-height: 1.6 — comfortable. This is the best for reading body text on websites.</p>
+    <p class="lh-large">line-height: 2.5 — spacious. The lines are very far apart and feel very open.</p>
+    <hr>
+    <p class="ls-tight">letter-spacing: -2px squeezed</p>
+    <p class="ls-wide">letter-spacing: 5px spread out</p>
+    <hr>
+    <p class="ws-wide">word spacing is very wide here</p>
+    <hr>
+    <p class="indent">This paragraph has a 40px text indent on the first line only, just like in a book.</p>
+    <hr>
+    <p>text-overflow: ellipsis — text too long gets dots:</p>
+    <div class="overflow">This text is way too long to fit in this small box</div>
+  </div>
+
+</body>
+</html>

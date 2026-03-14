@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 10 - Background Properties</title>
+  <style>
+
+    /* 1. BACKGROUND COLORS — different ways to write color */
+
+    .bg-hex  { background-color: #e94560; }
+    .bg-rgb  { background-color: rgb(15, 52, 96); }
+    .bg-hsl  { background-color: hsl(210, 73%, 40%); }
+    .bg-rgba { background-color: rgba(233, 69, 96, 0.3); } /* transparent */
+
+
+    /* 2. LINEAR GRADIENTS */
+
+    .grad-lr  { background: linear-gradient(to right, #e94560, #0f3460); }
+    .grad-tb  { background: linear-gradient(to bottom, #11998e, #38ef7d); }
+    .grad-dia { background: linear-gradient(135deg, #fc5c7d, #6a3093); }
+
+
+    /* 3. RADIAL GRADIENT */
+
+    .grad-radial {
+      background: radial-gradient(circle, #e94560, #1a1a2e);
+    }
+
+
+    /* 4. MULTIPLE BACKGROUND LAYERS
+          First layer is on top, last is on bottom */
+
+    .multi-bg {
+      background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        linear-gradient(to right, #4e54c8, #8f94fb);
+    }
+
+
+    /* 5. BACKGROUND SIZE */
+
+    .bg-size-cover {
+      background: linear-gradient(45deg, #e94560, #0f3460);
+      background-size: cover;   /* covers entire element */
+    }
+
+    .bg-size-contain {
+      background: linear-gradient(45deg, #11998e, #38ef7d);
+      background-size: 50% 50%; /* only fills half */
+    }
+
+
+    /* General styles */
+    body { padding: 30px; font-family: Arial; background: #f9f9f9; }
+    h2 { color: #e94560; margin: 25px 0 10px; border-bottom: 2px solid #e94560; padding-bottom: 5px; }
+
+    .box {
+      height: 100px;
+      border-radius: 10px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .dark { color: #333; }
+    .demo { background: white; padding: 15px; border-radius: 8px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 10 - Background Properties</h1>
+
+  <!-- BACKGROUND COLORS -->
+  <h2>1. Background Colors</h2>
+  <div class="demo">
+    <div class="box bg-hex">background-color: #e94560 (HEX)</div>
+    <div class="box bg-rgb">background-color: rgb(15, 52, 96) (RGB)</div>
+    <div class="box bg-hsl">background-color: hsl(210, 73%, 40%) (HSL)</div>
+    <div class="box bg-rgba dark">background-color: rgba — transparent red</div>
+  </div>
+
+  <!-- LINEAR GRADIENTS -->
+  <h2>2. Linear Gradients</h2>
+  <div class="demo">
+    <div class="box grad-lr">linear-gradient — left to right</div>
+    <div class="box grad-tb">linear-gradient — top to bottom</div>
+    <div class="box grad-dia">linear-gradient — diagonal 135deg</div>
+  </div>
+
+  <!-- RADIAL GRADIENT -->
+  <h2>3. Radial Gradient</h2>
+  <div class="demo">
+    <div class="box grad-radial">radial-gradient — circle from center</div>
+  </div>
+
+  <!-- MULTIPLE LAYERS -->
+  <h2>4. Multiple Background Layers</h2>
+  <div class="demo">
+    <div class="box multi-bg">Two background layers combined</div>
+  </div>
+
+  <!-- BACKGROUND SIZE -->
+  <h2>5. Background Size</h2>
+  <div class="demo">
+    <div class="box bg-size-cover">background-size: cover</div>
+    <div class="box bg-size-contain">background-size: 50% 50%</div>
+  </div>
+
+</body>
+</html>

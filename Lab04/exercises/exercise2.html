@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 2 - Basic Selectors</title>
+  <style>
+
+    /* 1. Element selector — targets ALL p tags on the page */
+    p {
+      color: darkblue;
+      font-size: 1.1rem;
+    }
+
+    /* 2. Class selector — targets anything with class="box" */
+    .box {
+      background: lightgreen;
+      padding: 10px;
+      margin: 8px 0;
+    }
+
+    /* 3. ID selector — targets the ONE element with id="special" */
+    #special {
+      color: white;
+      background: #e94560;
+      padding: 10px;
+    }
+
+    /* 4. Universal selector — applies to EVERY element */
+    * {
+      box-sizing: border-box;
+      font-family: Arial;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 2 - Basic Selectors</h1>
+
+  <!-- Element selector targets this -->
+  <p>This paragraph is dark blue — element selector.</p>
+  <p>This one too — element selector applies to ALL p tags.</p>
+
+  <!-- Class selector targets these -->
+  <div class="box">This div has class="box" — green background.</div>
+  <div class="box">This one too — classes can be reused!</div>
+
+  <!-- ID selector targets only this one -->
+  <p id="special">This has id="special" — red background, white text.</p>
+
+</body>
+</html>

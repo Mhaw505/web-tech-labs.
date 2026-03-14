@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 11 - Maha Naveed Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #e94560;
+      --dark: #1a1a2e;
+      --mid: #0f3460;
+      --light: #f0f2f5;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--light);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* === NAVBAR === */
+    .navbar {
+      background: var(--dark);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    /* === HERO === */
+    .hero {
+      background: linear-gradient(135deg, var(--dark), var(--mid));
+      color: white;
+      padding: 80px 40px;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-img-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--mid));
+      border: 4px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      flex-shrink: 0;
+      box-shadow: 0 0 30px rgba(233,69,96,0.4);
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-text h2 {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+
+    .hero-text .roll {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      color: #aaa;
+      max-width: 550px;
+      line-height: 1.8;
+    }
+
+    /* === SECTIONS === */
+    .section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 30px;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--dark);
+      border-left: 5px solid var(--primary);
+      padding-left: 15px;
+      margin-bottom: 25px;
+    }
+
+    /* === SKILLS === */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .skill-icon { font-size: 2rem; margin-bottom: 10px; }
+    .skill-card h3 { color: var(--dark); font-size: 1rem; margin-bottom: 8px; }
+
+    .skill-bar {
+      background: #eee;
+      border-radius: 50px;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--primary), var(--mid));
+      border-radius: 50px;
+    }
+
+    /* === PROJECTS === */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--primary);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .project-card h3 { color: var(--dark); margin-bottom: 8px; }
+    .project-card p  { color: #666; font-size: 0.9rem; line-height: 1.6; }
+
+    .tech-tag {
+      display: inline-block;
+      background: #f0f4ff;
+      color: var(--mid);
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      margin: 5px 3px 0;
+      font-weight: bold;
+    }
+
+    /* === EDUCATION === */
+    .edu-card {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      margin-bottom: 15px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .edu-card h3 { color: var(--dark); margin-bottom: 5px; }
+    .edu-card p  { color: #666; font-size: 0.9rem; }
+    .edu-year    { color: var(--primary); font-weight: bold; font-size: 0.85rem; margin-bottom: 5px; }
+
+    /* === EXPERIENCE === */
+    .exp-card {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      margin-bottom: 15px;
+      border-left: 4px solid #11998e;
+    }
+
+    .exp-card h3 { color: var(--dark); margin-bottom: 5px; }
+    .exp-card p  { color: #666; font-size: 0.9rem; }
+    .exp-year    { color: #11998e; font-weight: bold; font-size: 0.85rem; margin-bottom: 5px; }
+
+    /* === CONTACT === */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--mid));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-card h4 { color: var(--dark); margin-bottom: 3px; }
+    .contact-card p  { color: #666; font-size: 0.85rem; }
+
+    /* === FOOTER === */
+    .footer {
+      text-align: center;
+      padding: 25px;
+      background: var(--dark);
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 50px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">Maha Naveed</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero" id="about">
+    <div class="hero-img-placeholder">👩🏻‍💻</div>
+    <div class="hero-text">
+      <h1>Maha Naveed</h1>
+      <h2>BS Computer Science — UET Peshawar</h2>
+      <p class="roll">Roll No: 24PWBCS1183</p>
+      <p>I'm a Computer Science student at UET Peshawar. I focus on programming, databases, and system design. I'm comfortable working with Java, SQL, and basic front-end/back-end tools. I enjoy building clean, useful applications and learning by doing.</p>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-icon">☕</div>
+        <h3>Java</h3>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🗄️</div>
+        <h3>SQL / MySQL</h3>
+        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h3>HTML & CSS</h3>
+        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🟢</div>
+        <h3>Node.js</h3>
+        <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🍃</div>
+        <h3>MongoDB</h3>
+        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🐙</div>
+        <h3>Git & GitHub</h3>
+        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>🗳️ Class Election System</h3>
+        <p>Voting app with admin panel, symbol input, CR/president elections, and result display.</p>
+        <span class="tech-tag">JavaFX</span>
+        <span class="tech-tag">MongoDB</span>
+      </div>
+
+      <div class="project-card">
+        <h3>⌨️ Typing Speed Tester</h3>
+        <p>Typing test with timer, random paragraph, retry button, and performance summary.</p>
+        <span class="tech-tag">JavaFX</span>
+      </div>
+
+      <div class="project-card">
+        <h3>🕷️ Web Scraper</h3>
+        <p>Scrapes and displays data from websites; supports single and multiple page extraction.</p>
+        <span class="tech-tag">Java</span>
+      </div>
+
+      <div class="project-card">
+        <h3>🐾 Pet Adoption System</h3>
+        <p>Console app to manage pet listings and adoption records using file handling.</p>
+        <span class="tech-tag">C</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <h2>Education</h2>
+
+    <div class="edu-card">
+      <p class="edu-year">2024 — 2028</p>
+      <h3>BS Computer Science</h3>
+      <p>University of Engineering & Technology, Peshawar</p>
+    </div>
+
+    <div class="edu-card">
+      <p class="edu-year">2022 — 2024</p>
+      <h3>Intermediate (FSc)</h3>
+      <p>Jinnah College for Women, Peshawar</p>
+    </div>
+
+    <div class="edu-card">
+      <p class="edu-year">Until 2022</p>
+      <h3>Matriculation</h3>
+      <p>The City School, Peshawar</p>
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <h2>Experience</h2>
+
+    <div class="exp-card">
+      <p class="exp-year">Aug 2025 — Sep 2025</p>
+      <h3>Summer Intern</h3>
+      <p>SNGPL — Kohat, KPK, Pakistan (Remote)</p>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <div>
+          <h4>Email</h4>
+          <p>mahan.veed2006@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div>
+          <h4>Phone</h4>
+          <p>03334358989</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Location</h4>
+          <p>Peshawar, Pakistan</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">🐙</div>
+        <div>
+          <h4>GitHub</h4>
+          <p>github.com/Mhaw505</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Maha Naveed — 24PWBCS1183 — CS 224L Web Technologies — UET Peshawar</p>
+  </footer>
+
+</body>
+</html>
