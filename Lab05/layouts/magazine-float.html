@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 - Magazine Layout</title>
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/float.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="mag-header">
+    <div class="container">
+      <h1>The Daily Tribune</h1>
+      <p class="tagline">Your trusted source of news</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- TOP FEATURED STORY -->
+    <section class="featured-story clearfix">
+      <img src="https://picsum.photos/400/250" alt="Featured" class="float-left">
+      <h2>Breaking: Major Discovery Changes Everything We Know</h2>
+      <p>Scientists around the world are celebrating after a groundbreaking discovery was made in a remote laboratory. The findings suggest that our understanding of the universe may need to be completely revised.</p>
+      <p>Experts from over 30 countries gathered to discuss the implications of this monumental find. The research, which took over a decade to complete, opens new doors for exploration and innovation.</p>
+      <p>This discovery is expected to influence multiple fields including medicine, engineering, and environmental science for decades to come.</p>
+    </section>
+
+    <!-- THREE COLUMN LAYOUT -->
+    <section class="three-col-section clearfix">
+
+      <div class="col-third">
+        <h3>Technology</h3>
+        <img src="https://picsum.photos/200/120?random=1" alt="Tech">
+        <p>The latest smartphones are pushing boundaries with new AI-powered features that make everyday tasks faster and smarter than ever before.</p>
+        <a href="#" class="read-more">Read More →</a>
+      </div>
+
+      <div class="col-third">
+        <h3>Science</h3>
+        <img src="https://picsum.photos/200/120?random=2" alt="Science">
+        <p>Researchers have developed a new material that can absorb solar energy with 95% efficiency, potentially revolutionizing renewable energy production.</p>
+        <a href="#" class="read-more">Read More →</a>
+      </div>
+
+      <div class="col-third">
+        <h3>Sports</h3>
+        <img src="https://picsum.photos/200/120?random=3" alt="Sports">
+        <p>The national team secured a historic victory last night in what commentators are calling the most exciting match of the decade.</p>
+        <a href="#" class="read-more">Read More →</a>
+      </div>
+
+    </section>
+
+    <!-- MAIN CONTENT + SIDEBAR -->
+    <section class="content-area clearfix">
+
+      <main class="main-content">
+        <h2>Editor's Pick: The Future of Cities</h2>
+        <img src="https://picsum.photos/500/200?random=4" 
+             alt="City" class="float-left small-img">
+        <p>Urban planners across the globe are rethinking how cities should be designed for future generations. With populations growing rapidly, space is becoming more precious than ever.</p>
+        <p>Smart city technologies are being implemented in dozens of major cities, using sensors and AI to manage traffic, reduce energy consumption, and improve public safety.</p>
+        <p>From vertical gardens to underground transport systems, the city of tomorrow looks very different from what we know today. Architects and engineers are collaborating like never before.</p>
+
+        <img src="https://picsum.photos/500/200?random=5" 
+             alt="City2" class="float-right small-img">
+        <p>Community spaces are being reimagined as multi-purpose areas that serve different functions throughout the day — a market in the morning, a park in the afternoon, an event venue at night.</p>
+        <p>Sustainability is at the heart of every new urban development project, with green rooftops, solar panels, and rainwater harvesting systems becoming standard features.</p>
+      </main>
+
+      <aside class="sidebar">
+        <div class="sidebar-widget">
+          <h3>Top Stories</h3>
+          <ul class="story-list">
+            <li><a href="#">Economy grows by 4% in Q3</a></li>
+            <li><a href="#">New vaccine approved for use</a></li>
+            <li><a href="#">Space mission launches Friday</a></li>
+            <li><a href="#">Local elections set for May</a></li>
+            <li><a href="#">Tech giant announces layoffs</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>Weather</h3>
+          <p>☀️ Peshawar: 28°C</p>
+          <p>🌤️ Islamabad: 24°C</p>
+          <p>🌧️ Karachi: 32°C</p>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>Advertisement</h3>
+          <div class="ad-box">Your Ad Here</div>
+        </div>
+      </aside>
+
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mag-footer">
+    <div class="container">
+      <p>© 2025 The Daily Tribune. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4 - Flexbox Navigation</title>
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/flexbox.css">
+</head>
+<!-- TASK 5: CARD LAYOUT -->
+  <div class="container">
+
+    <h2 style="margin-bottom: 20px;">Task 5: Flexbox Card Layout</h2>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filter-buttons">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Design</button>
+      <button class="filter-btn">Development</button>
+      <button class="filter-btn">Marketing</button>
+    </div>
+
+    <!-- CARDS GRID -->
+    <div class="cards-container">
+
+      <div class="card">
+        <div class="card-img" style="background:#e74c3c;">🎨</div>
+        <div class="card-body">
+          <span class="card-tag">Design</span>
+          <h3 class="card-title">UI/UX Fundamentals</h3>
+          <p class="card-text">Learn the core principles of user interface and experience design to build beautiful and functional products.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">$49</span>
+          <button class="card-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img" style="background:#3498db;">💻</div>
+        <div class="card-body">
+          <span class="card-tag">Development</span>
+          <h3 class="card-title">Full Stack Web Dev</h3>
+          <p class="card-text">Master both frontend and backend development with HTML, CSS, JavaScript, Node.js and databases.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">$99</span>
+          <button class="card-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img" style="background:#2ecc71;">📈</div>
+        <div class="card-body">
+          <span class="card-tag">Marketing</span>
+          <h3 class="card-title">Digital Marketing</h3>
+          <p class="card-text">Grow your business online with proven strategies in SEO, social media, email marketing and paid ads.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">$59</span>
+          <button class="card-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img" style="background:#9b59b6;">📱</div>
+        <div class="card-body">
+          <span class="card-tag">Design</span>
+          <h3 class="card-title">Mobile App Design</h3>
+          <p class="card-text">Design stunning mobile applications for iOS and Android using Figma and modern design systems.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">$69</span>
+          <button class="card-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img" style="background:#f39c12;">🔒</div>
+        <div class="card-body">
+          <span class="card-tag">Development</span>
+          <h3 class="card-title">Web Security</h3>
+          <p class="card-text">Protect your web applications from common vulnerabilities and learn ethical hacking fundamentals.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">$79</span>
+          <button class="card-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img" style="background:#1abc9c;">📊</div>
+        <div class="card-body">
+          <span class="card-tag">Marketing</span>
+          <h3 class="card-title">Data Analytics</h3>
+          <p class="card-text">Turn raw data into powerful insights using Google Analytics, Excel and data visualization tools.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">$89</span>
+          <button class="card-btn">Enroll Now</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<body>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="flex-header">
+    <div class="flex-header-inner">
+
+      <!-- LOGO -->
+      <div class="flex-logo">FlexNav</div>
+
+      <!-- HAMBURGER BUTTON (mobile only) -->
+      <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- NAV LINKS -->
+      <nav class="flex-nav" id="flexNav">
+        <a href="#">Home</a>
+
+        <!-- DROPDOWN -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Services ▾</a>
+          <div class="dropdown-menu">
+            <a href="#">Web Design</a>
+            <a href="#">Development</a>
+            <a href="#">SEO</a>
+            <a href="#">Marketing</a>
+          </div>
+        </div>
+
+        <a href="#">Portfolio</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+        <a href="#" class="nav-cta">Get Started</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <div class="flex-page">
+    <div class="container">
+      <h2>Task 4: Flexbox Navigation System</h2>
+      <p>Resize the browser to see the hamburger menu on mobile.</p>
+      <p>Hover over "Services" to see the dropdown.</p>
+
+      <br>
+
+      <!-- SECTION: VERTICAL SIDEBAR NAV -->
+      <section class="demo-section">
+        <h3>Vertical Sidebar Navigation</h3>
+        <div class="sidebar-nav-demo">
+
+          <nav class="vertical-nav">
+            <div class="nav-brand">Dashboard</div>
+            <a href="#" class="nav-item active">🏠 Home</a>
+            <a href="#" class="nav-item">👤 Profile</a>
+            <a href="#" class="nav-item">📊 Analytics</a>
+            <a href="#" class="nav-item">⚙️ Settings</a>
+            <a href="#" class="nav-item">📁 Files</a>
+            <a href="#" class="nav-item logout">🚪 Logout</a>
+          </nav>
+
+          <div class="sidebar-content">
+            <h3>Main Content Area</h3>
+            <p>This area sits beside the vertical sidebar navigation. On mobile, the sidebar stacks on top of this content.</p>
+            <p>Flexbox makes it easy to create this kind of layout with just a few lines of CSS.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION: FLEXBOX NAV PATTERNS -->
+      <section class="demo-section">
+        <h3>Navigation Alignment Patterns</h3>
+
+        <!-- Left aligned -->
+        <p class="pattern-label">Left Aligned:</p>
+        <nav class="pattern-nav left">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <!-- Center aligned -->
+        <p class="pattern-label">Center Aligned:</p>
+        <nav class="pattern-nav center">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <!-- Right aligned -->
+        <p class="pattern-label">Right Aligned:</p>
+        <nav class="pattern-nav right">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <!-- Space between -->
+        <p class="pattern-label">Space Between:</p>
+        <nav class="pattern-nav space">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('flexNav');
+      nav.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

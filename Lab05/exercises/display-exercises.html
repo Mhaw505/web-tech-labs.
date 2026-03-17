@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Display Properties</title>
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/display.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Task 1: Display Property Showcase</h1>
+
+    <!-- SECTION 1: Block vs Inline vs Inline-block -->
+    <section class="demo-section">
+      <h2>1. Block vs Inline vs Inline-Block</h2>
+
+      <h3>Block Elements (each on new line)</h3>
+      <div class="demo-block">Block 1</div>
+      <div class="demo-block">Block 2</div>
+      <div class="demo-block">Block 3</div>
+
+      <h3>Inline Elements (sit side by side)</h3>
+      <span class="demo-inline">Inline 1</span>
+      <span class="demo-inline">Inline 2</span>
+      <span class="demo-inline">Inline 3</span>
+
+      <h3>Inline-Block (side by side but accept width/height)</h3>
+      <div class="demo-inline-block">Inline-Block 1</div>
+      <div class="demo-inline-block">Inline-Block 2</div>
+      <div class="demo-inline-block">Inline-Block 3</div>
+    </section>
+
+    <!-- SECTION 2: Display None vs Visibility Hidden -->
+    <section class="demo-section">
+      <h2>2. Display None vs Visibility Hidden</h2>
+
+      <div class="demo-block">Box Before</div>
+      <div class="demo-none">I am display: none (removed from page)</div>
+      <div class="demo-block">Box After (notice no gap above me)</div>
+
+      <br>
+
+      <div class="demo-block">Box Before</div>
+      <div class="demo-hidden">I am visibility: hidden (still takes space)</div>
+      <div class="demo-block">Box After (notice gap above me)</div>
+    </section>
+
+    <!-- SECTION 3: Table Display -->
+    <section class="demo-section">
+      <h2>3. Table Layout Without Table Markup</h2>
+      <div class="fake-table">
+        <div class="fake-row">
+          <div class="fake-cell header">Name</div>
+          <div class="fake-cell header">Roll No</div>
+          <div class="fake-cell header">Grade</div>
+        </div>
+        <div class="fake-row">
+          <div class="fake-cell">Ali</div>
+          <div class="fake-cell">01</div>
+          <div class="fake-cell">A</div>
+        </div>
+        <div class="fake-row">
+          <div class="fake-cell">Sara</div>
+          <div class="fake-cell">02</div>
+          <div class="fake-cell">B+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Navigation using Display -->
+    <section class="demo-section">
+      <h2>4. Horizontal Navigation</h2>
+      <nav class="demo-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </section>
+
+  </div>
+
+</body>
+</html>

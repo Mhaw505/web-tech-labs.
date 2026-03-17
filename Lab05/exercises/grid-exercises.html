@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 6 - CSS Grid Photo Gallery</title>
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/grid.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Task 6: CSS Grid Photo Gallery</h1>
+    <p>Responsive masonry-style grid with hover effects</p>
+
+    <!-- FILTER BUTTONS -->
+    <div class="gallery-filters">
+      <button class="gal-btn active">All</button>
+      <button class="gal-btn">Nature</button>
+      <button class="gal-btn">City</button>
+      <button class="gal-btn">People</button>
+      <button class="gal-btn">Abstract</button>
+    </div>
+
+    <!-- PHOTO GRID -->
+    <div class="photo-grid">
+
+      <!-- LARGE FEATURED -->
+      <div class="photo-item featured">
+        <img src="https://picsum.photos/800/600?random=10" alt="Photo 1">
+        <div class="photo-overlay">
+          <h3>Mountain Sunrise</h3>
+          <p>Nature • Photography</p>
+        </div>
+      </div>
+
+      <!-- TALL -->
+      <div class="photo-item tall">
+        <img src="https://picsum.photos/400/700?random=11" alt="Photo 2">
+        <div class="photo-overlay">
+          <h3>City Lights</h3>
+          <p>City • Night</p>
+        </div>
+      </div>
+
+      <!-- NORMAL -->
+      <div class="photo-item">
+        <img src="https://picsum.photos/400/300?random=12" alt="Photo 3">
+        <div class="photo-overlay">
+          <h3>Street Life</h3>
+          <p>People • Urban</p>
+        </div>
+      </div>
+
+      <div class="photo-item">
+        <img src="https://picsum.photos/400/300?random=13" alt="Photo 4">
+        <div class="photo-overlay">
+          <h3>Forest Path</h3>
+          <p>Nature • Landscape</p>
+        </div>
+      </div>
+
+      <!-- WIDE -->
+      <div class="photo-item wide">
+        <img src="https://picsum.photos/800/300?random=14" alt="Photo 5">
+        <div class="photo-overlay">
+          <h3>Ocean View</h3>
+          <p>Nature • Sea</p>
+        </div>
+      </div>
+
+      <div class="photo-item">
+        <img src="https://picsum.photos/400/300?random=15" alt="Photo 6">
+        <div class="photo-overlay">
+          <h3>Abstract Colors</h3>
+          <p>Abstract • Art</p>
+        </div>
+      </div>
+
+      <div class="photo-item tall">
+        <img src="https://picsum.photos/400/600?random=16" alt="Photo 7">
+        <div class="photo-overlay">
+          <h3>Portrait</h3>
+          <p>People • Portrait</p>
+        </div>
+      </div>
+
+      <div class="photo-item">
+        <img src="https://picsum.photos/400/300?random=17" alt="Photo 8">
+        <div class="photo-overlay">
+          <h3>City Bridge</h3>
+          <p>City • Architecture</p>
+        </div>
+      </div>
+
+      <div class="photo-item">
+        <img src="https://picsum.photos/400/300?random=18" alt="Photo 9">
+        <div class="photo-overlay">
+          <h3>Sunset</h3>
+          <p>Nature • Sky</p>
+        </div>
+      </div>
+
+      <!-- WIDE -->
+      <div class="photo-item wide">
+        <img src="https://picsum.photos/800/300?random=19" alt="Photo 10">
+        <div class="photo-overlay">
+          <h3>Desert Dunes</h3>
+          <p>Nature • Desert</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

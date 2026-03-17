@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 10 - Media Query Demo</title>
+  <link rel="stylesheet" href="../styles/base.css">
+  <style>
+
+    /* ===== BASE ===== */
+    body { background: #f0f2f5; }
+
+    /* ===== HEADER ===== */
+    .mq-header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+    }
+
+    .mq-header h1 { color: white; font-size: 1.8rem; }
+    .mq-header p  { color: #aaa; font-size: 14px; }
+
+    /* ===== BREAKPOINT INDICATOR ===== */
+    .breakpoint-indicator {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: bold;
+      color: white;
+      z-index: 9999;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    /* SHOW ONE AT A TIME */
+    .bp-mobile,
+    .bp-tablet,
+    .bp-small-desktop,
+    .bp-desktop,
+    .bp-large { display: none; }
+
+    /* mobile default */
+    .bp-mobile {
+      display: block;
+      background: #e74c3c;
+    }
+
+    @media (min-width: 768px) {
+      .bp-mobile  { display: none; }
+      .bp-tablet  { display: block; background: #f39c12; }
+    }
+
+    @media (min-width: 1024px) {
+      .bp-tablet        { display: none; }
+      .bp-small-desktop { display: block; background: #3498db; }
+    }
+
+    @media (min-width: 1200px) {
+      .bp-small-desktop { display: none; }
+      .bp-desktop       { display: block; background: #2ecc71; }
+    }
+
+    @media (min-width: 1400px) {
+      .bp-desktop { display: none; }
+      .bp-large   { display: block; background: #9b59b6; }
+    }
+
+    /* ===== MAIN CONTAINER ===== */
+    .mq-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* ===== DEMO SECTION ===== */
+    .demo-section {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-left: 4px solid #3498db;
+    }
+
+    .demo-section h2 {
+      color: #3498db;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+
+    .demo-section .subtitle {
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    /* ===== SECTION 1: LAYOUT CHANGES ===== */
+    .layout-demo {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .layout-box {
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .layout-demo {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .layout-demo {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+
+    /* ===== SECTION 2: TYPOGRAPHY SCALING ===== */
+    .typo-demo h1 {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .typo-demo p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .typo-demo .big-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+
+    @media (min-width: 768px) {
+      .typo-demo h1      { font-size: 2rem; }
+      .typo-demo p       { font-size: 15px; }
+      .typo-demo .big-number { font-size: 3rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .typo-demo h1      { font-size: 2.5rem; }
+      .typo-demo p       { font-size: 16px; }
+      .typo-demo .big-number { font-size: 4rem; }
+    }
+
+    /* ===== SECTION 3: NAVIGATION PATTERN ===== */
+    .nav-demo {
+      background: #2c3e50;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .nav-demo-inner {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      gap: 5px;
+    }
+
+    .nav-demo a {
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      display: block;
+    }
+
+    .nav-demo a:hover { background: rgba(255,255,255,0.1); }
+
+    .nav-label {
+      background: #e74c3c;
+      color: white;
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .nav-demo-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .nav-label::before { content: "Horizontal Nav (768px+)"; }
+      .nav-label { display: none; }
+    }
+
+    /* ===== SECTION 4: SHOW/HIDE ELEMENTS ===== */
+    .visibility-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .vis-box {
+      padding: 15px 20px;
+      border-radius: 8px;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* mobile only */
+    .show-mobile {
+      background: #e74c3c;
+      display: block;
+    }
+
+    /* tablet only */
+    .show-tablet {
+      background: #f39c12;
+      display: none;
+    }
+
+    /* desktop only */
+    .show-desktop {
+      background: #2ecc71;
+      display: none;
+    }
+
+    /* always visible */
+    .show-always {
+      background: #3498db;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .show-mobile  { display: none; }
+      .show-tablet  { display: block; }
+    }
+
+    @media (min-width: 1024px) {
+      .show-tablet  { display: none; }
+      .show-desktop { display: block; }
+    }
+
+    /* ===== SECTION 5: DARK MODE ===== */
+    .dark-demo {
+      padding: 20px;
+      border-radius: 8px;
+      background: #f9f9f9;
+      border: 2px dashed #ddd;
+      transition: all 0.3s;
+    }
+
+    .dark-demo h3 { color: #2c3e50; }
+    .dark-demo p  { color: #555; font-size: 14px; }
+
+    @media (prefers-color-scheme: dark) {
+      .dark-demo {
+        background: #1a1a2e;
+        border-color: #333;
+      }
+      .dark-demo h3 { color: white; }
+      .dark-demo p  { color: #aaa; }
+    }
+
+    /* ===== SECTION 6: ORIENTATION ===== */
+    .orientation-demo {
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      background: #3498db;
+      color: white;
+    }
+
+    @media (orientation: landscape) {
+      .orientation-demo {
+        background: #2ecc71;
+      }
+    }
+
+    /* ===== SECTION 7: PRINT ===== */
+    .print-demo {
+      padding: 15px;
+      border: 2px dashed #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .print-only { display: none; }
+
+    @media print {
+      .mq-header,
+      .breakpoint-indicator,
+      .no-print { display: none; }
+
+      .print-only { display: block; }
+
+      body { background: white; }
+
+      .demo-section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+      }
+    }
+
+    /* ===== SECTION 8: BREAKPOINT TABLE ===== */
+    .bp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .bp-table th {
+      background: #2c3e50;
+      color: white;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    .bp-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .bp-table tr:nth-child(even) td { background: #f9f9f9; }
+
+    .bp-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- BREAKPOINT INDICATOR -->
+  <div class="breakpoint-indicator">
+    <span class="bp-mobile">📱 Mobile (&lt;768px)</span>
+    <span class="bp-tablet">📟 Tablet (768px+)</span>
+    <span class="bp-small-desktop">💻 Small Desktop (1024px+)</span>
+    <span class="bp-desktop">🖥️ Desktop (1200px+)</span>
+    <span class="bp-large">🖥️ Large (1400px+)</span>
+  </div>
+
+  <!-- HEADER -->
+  <div class="mq-header">
+    <h1>Task 10: Media Query Demonstration</h1>
+    <p>Resize the browser to see all responsive changes in action</p>
+  </div>
+
+  <div class="mq-container">
+
+    <!-- SECTION 1: LAYOUT CHANGES -->
+    <div class="demo-section">
+      <h2>1. Layout Changes at Breakpoints</h2>
+      <p class="subtitle">1 column mobile → 2 columns tablet → 4 columns desktop</p>
+      <div class="layout-demo">
+        <div class="layout-box" style="background:#e74c3c;">Box 1</div>
+        <div class="layout-box" style="background:#3498db;">Box 2</div>
+        <div class="layout-box" style="background:#2ecc71;">Box 3</div>
+        <div class="layout-box" style="background:#f39c12;">Box 4</div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: TYPOGRAPHY -->
+    <div class="demo-section">
+      <h2>2. Typography Scaling</h2>
+      <p class="subtitle">Text gets bigger on larger screens</p>
+      <div class="typo-demo">
+        <div class="big-number">4,280</div>
+        <h1>Responsive Typography</h1>
+        <p>This paragraph text scales up slightly on larger screens for better readability. Resize the browser to see the font size change at different breakpoints across mobile, tablet and desktop viewports.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 3: NAVIGATION -->
+    <div class="demo-section">
+      <h2>3. Navigation Pattern Changes</h2>
+      <p class="subtitle">Vertical on mobile → Horizontal on tablet+</p>
+      <div class="nav-demo">
+        <div class="nav-label">Vertical Nav (mobile)</div>
+        <div class="nav-demo-inner">
+          <a href="#">🏠 Home</a>
+          <a href="#">👤 About</a>
+          <a href="#">💼 Services</a>
+          <a href="#">📞 Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: SHOW/HIDE -->
+    <div class="demo-section">
+      <h2>4. Show / Hide at Breakpoints</h2>
+      <p class="subtitle">Different elements visible at different screen sizes</p>
+      <div class="visibility-demo">
+        <div class="vis-box show-mobile">📱 Mobile Only</div>
+        <div class="vis-box show-tablet">📟 Tablet Only</div>
+        <div class="vis-box show-desktop">🖥️ Desktop Only</div>
+        <div class="vis-box show-always">✅ Always Visible</div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: DARK MODE -->
+    <div class="demo-section">
+      <h2>5. Dark Mode (prefers-color-scheme)</h2>
+      <p class="subtitle">Changes automatically based on your OS dark/light setting</p>
+      <div class="dark-demo">
+        <h3>🌙 Dark Mode Aware Box</h3>
+        <p>This box automatically switches between light and dark styles based on your operating system's color scheme preference. Enable dark mode on your OS to see it change.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 6: ORIENTATION -->
+    <div class="demo-section">
+      <h2>6. Device Orientation</h2>
+      <p class="subtitle">Changes based on portrait vs landscape</p>
+      <div class="orientation-demo">
+        📱 Rotate your device or resize window — Portrait = Blue | Landscape = Green
+      </div>
+    </div>
+
+    <!-- SECTION 7: PRINT -->
+    <div class="demo-section no-print">
+      <h2>7. Print Media Query</h2>
+      <p class="subtitle">Try printing this page (Ctrl+P) — header and extras are hidden</p>
+      <div class="print-demo">
+        <p>🖨️ When you print this page, the header, breakpoint indicator, and decorative elements are hidden automatically using <strong>@media print</strong>. Only the essential content remains.</p>
+        <div class="print-only">
+          <p><strong>PRINT VERSION:</strong> This text only appears when printing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 8: BREAKPOINT REFERENCE -->
+    <div class="demo-section">
+      <h2>8. Breakpoint Reference Table</h2>
+      <p class="subtitle">Common breakpoints used in this lab</p>
+      <table class="bp-table">
+        <thead>
+          <tr>
+            <th>Breakpoint</th>
+            <th>Min Width</th>
+            <th>Target Devices</th>
+            <th>Layout</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="bp-dot" style="background:#e74c3c;"></span>Mobile</td>
+            <td>0px (base)</td>
+            <td>Phones</td>
+            <td>Single column, stacked</td>
+          </tr>
+          <tr>
+            <td><span class="bp-dot" style="background:#f39c12;"></span>Tablet</td>
+            <td>768px</td>
+            <td>Tablets, large phones</td>
+            <td>2 columns, horizontal nav</td>
+          </tr>
+          <tr>
+            <td><span class="bp-dot" style="background:#3498db;"></span>Small Desktop</td>
+            <td>1024px</td>
+            <td>Small laptops</td>
+            <td>3-4 columns, sidebar visible</td>
+          </tr>
+          <tr>
+            <td><span class="bp-dot" style="background:#2ecc71;"></span>Desktop</td>
+            <td>1200px</td>
+            <td>Desktops, large laptops</td>
+            <td>Full layout, all features</td>
+          </tr>
+          <tr>
+            <td><span class="bp-dot" style="background:#9b59b6;"></span>Large</td>
+            <td>1400px</td>
+            <td>Wide monitors</td>
+            <td>Max-width container centered</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>

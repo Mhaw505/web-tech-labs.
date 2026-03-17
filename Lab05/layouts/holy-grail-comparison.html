@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 7 - Holy Grail Layout</title>
+  <link rel="stylesheet" href="../styles/base.css">
+  <style>
+
+    /* ===== SHARED STYLES ===== */
+    body { background: #f0f2f5; }
+
+    .page-title {
+      text-align: center;
+      padding: 30px 20px 10px;
+      color: #2c3e50;
+    }
+
+    .page-title p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .method-label {
+      text-align: center;
+      background: #2c3e50;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .method-wrapper {
+      margin-bottom: 50px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    /* SHARED PARTS */
+    .hg-header {
+      background: #2980b9;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .hg-footer {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .hg-nav {
+      background: #e74c3c;
+      color: white;
+      padding: 20px;
+      min-height: 200px;
+    }
+
+    .hg-nav h4 {
+      color: white;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 8px;
+    }
+
+    .hg-nav a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      padding: 6px 0;
+      font-size: 14px;
+    }
+
+    .hg-nav a:hover { color: white; }
+
+    .hg-main {
+      background: white;
+      padding: 20px;
+      min-height: 200px;
+    }
+
+    .hg-main h4 { color: #2980b9; margin-bottom: 10px; }
+    .hg-main p  { font-size: 14px; color: #555; line-height: 1.7; }
+
+    .hg-aside {
+      background: #2ecc71;
+      color: white;
+      padding: 20px;
+      min-height: 200px;
+    }
+
+    .hg-aside h4 {
+      color: white;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 8px;
+    }
+
+    .hg-aside p { font-size: 13px; color: rgba(255,255,255,0.85); }
+
+    /* ==============================
+       METHOD 1 — FLOAT
+    ============================== */
+    .float-body {
+      background: white;
+      overflow: hidden;
+    }
+
+    .float-body::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .float-nav {
+      float: left;
+      width: 20%;
+    }
+
+    .float-main {
+      float: left;
+      width: 60%;
+    }
+
+    .float-aside {
+      float: left;
+      width: 20%;
+    }
+
+    /* ==============================
+       METHOD 2 — FLEXBOX
+    ============================== */
+    .flex-body {
+      display: flex;
+    }
+
+    .flex-nav   { flex: 0 0 20%; }
+    .flex-main  { flex: 1; }
+    .flex-aside { flex: 0 0 20%; }
+
+    /* ==============================
+       METHOD 3 — CSS GRID
+    ============================== */
+    .grid-layout {
+      display: grid;
+      grid-template-areas:
+        "header  header  header"
+        "nav     main    aside"
+        "footer  footer  footer";
+      grid-template-columns: 20% 1fr 20%;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    .grid-header { grid-area: header; }
+    .grid-nav    { grid-area: nav; }
+    .grid-main   { grid-area: main; }
+    .grid-aside  { grid-area: aside; }
+    .grid-footer { grid-area: footer; }
+
+    /* ==============================
+       COMPARISON TABLE
+    ============================== */
+    .comparison {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .comparison h2 {
+      background: #2c3e50;
+      color: white;
+      padding: 15px 20px;
+      font-size: 1rem;
+    }
+
+    .comparison table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .comparison th {
+      background: #34495e;
+      color: white;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    .comparison td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .comparison tr:nth-child(even) td { background: #f9f9f9; }
+
+    .tag-good { color: #27ae60; font-weight: bold; }
+    .tag-bad  { color: #e74c3c; font-weight: bold; }
+    .tag-ok   { color: #f39c12; font-weight: bold; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .float-nav,
+      .float-main,
+      .float-aside {
+        float: none;
+        width: 100%;
+      }
+
+      .flex-body { flex-direction: column; }
+
+      .grid-layout {
+        grid-template-areas:
+          "header"
+          "nav"
+          "main"
+          "aside"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="page-title">
+    <h1>Task 7: Holy Grail Layout</h1>
+    <p>The same layout built 3 different ways — Float, Flexbox, CSS Grid</p>
+  </div>
+
+  <div class="container">
+
+    <!-- METHOD 1: FLOAT -->
+    <div class="method-wrapper">
+      <div class="method-label">⚓ METHOD 1 — FLOAT BASED</div>
+      <div class="hg-header">Header — Float Method</div>
+      <div class="float-body">
+        <nav class="hg-nav float-nav">
+          <h4>Navigation</h4>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+        <main class="hg-main float-main">
+          <h4>Main Content</h4>
+          <p>This holy grail layout is built using CSS floats. The nav and aside are floated left with fixed percentages, and the main content takes the remaining space.</p>
+          <p>Floats were the original way to build multi-column layouts before Flexbox and Grid were introduced. They require clearfix hacks to prevent collapse.</p>
+        </main>
+        <aside class="hg-aside float-aside">
+          <h4>Sidebar</h4>
+          <p>Aside content here. Built with float: left and 20% width.</p>
+        </aside>
+      </div>
+      <div class="hg-footer">Footer — Float Method</div>
+    </div>
+
+    <!-- METHOD 2: FLEXBOX -->
+    <div class="method-wrapper">
+      <div class="method-label">💪 METHOD 2 — FLEXBOX BASED</div>
+      <div class="hg-header">Header — Flexbox Method</div>
+      <div class="flex-body">
+        <nav class="hg-nav flex-nav">
+          <h4>Navigation</h4>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+        <main class="hg-main flex-main">
+          <h4>Main Content</h4>
+          <p>This holy grail layout is built using Flexbox. The three columns are flex items inside a flex container. The main content uses flex: 1 to fill remaining space automatically.</p>
+          <p>Flexbox makes equal height columns effortless — something floats struggled with. It also handles reordering columns easily with the order property.</p>
+        </main>
+        <aside class="hg-aside flex-aside">
+          <h4>Sidebar</h4>
+          <p>Aside content here. Built with flex: 0 0 20% for fixed width.</p>
+        </aside>
+      </div>
+      <div class="hg-footer">Footer — Flexbox Method</div>
+    </div>
+
+    <!-- METHOD 3: CSS GRID -->
+    <div class="method-wrapper">
+      <div class="method-label">🔲 METHOD 3 — CSS GRID BASED</div>
+      <div class="grid-layout">
+        <div class="hg-header grid-header">Header — CSS Grid Method</div>
+        <nav class="hg-nav grid-nav">
+          <h4>Navigation</h4>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+        <main class="hg-main grid-main">
+          <h4>Main Content</h4>
+          <p>This holy grail layout is built using CSS Grid. The entire layout is defined with grid-template-areas giving each section a named area — header, nav, main, aside, footer.</p>
+          <p>CSS Grid is the most powerful method. It controls both rows and columns simultaneously, making complex layouts simple and readable with just a few lines of CSS.</p>
+        </main>
+        <aside class="hg-aside grid-aside">
+          <h4>Sidebar</h4>
+          <p>Aside content here. Placed using grid-area: aside.</p>
+        </aside>
+        <div class="hg-footer grid-footer">Footer — CSS Grid Method</div>
+      </div>
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <div class="comparison">
+      <h2>📊 Method Comparison</h2>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Float</th>
+          <th>Flexbox</th>
+          <th>CSS Grid</th>
+        </tr>
+        <tr>
+          <td>Ease of use</td>
+          <td><span class="tag-bad">Hard</span></td>
+          <td><span class="tag-ok">Medium</span></td>
+          <td><span class="tag-good">Easy</span></td>
+        </tr>
+        <tr>
+          <td>Equal height columns</td>
+          <td><span class="tag-bad">No</span></td>
+          <td><span class="tag-good">Yes</span></td>
+          <td><span class="tag-good">Yes</span></td>
+        </tr>
+        <tr>
+          <td>Responsive design</td>
+          <td><span class="tag-ok">Possible</span></td>
+          <td><span class="tag-good">Easy</span></td>
+          <td><span class="tag-good">Very Easy</span></td>
+        </tr>
+        <tr>
+          <td>Browser support</td>
+          <td><span class="tag-good">All</span></td>
+          <td><span class="tag-good">All Modern</span></td>
+          <td><span class="tag-good">All Modern</span></td>
+        </tr>
+        <tr>
+          <td>2D layouts</td>
+          <td><span class="tag-bad">No</span></td>
+          <td><span class="tag-bad">No</span></td>
+          <td><span class="tag-good">Yes</span></td>
+        </tr>
+        <tr>
+          <td>Recommended today</td>
+          <td><span class="tag-bad">No</span></td>
+          <td><span class="tag-ok">Sometimes</span></td>
+          <td><span class="tag-good">Yes</span></td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 - Positioning</title>
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/position.css">
+</head>
+<body>
+
+  <!-- FIXED HEADER -->
+  <header class="fixed-header">
+    <div class="header-inner">
+      <h1 class="logo">MyWebsite</h1>
+      <nav class="header-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN PAGE CONTENT -->
+  <div class="page-wrapper">
+    <div class="container">
+
+      <h2>Task 3: CSS Positioning Demo</h2>
+
+      <!-- SECTION 1: RELATIVE POSITIONING -->
+      <section class="demo-section">
+        <h3>1. Relative Positioning</h3>
+        <div class="box-normal">Normal Box</div>
+        <div class="box-relative">I am shifted 20px down and right</div>
+        <div class="box-normal">Normal Box (notice overlap above)</div>
+      </section>
+
+      <!-- SECTION 2: ABSOLUTE POSITIONING -->
+      <section class="demo-section">
+        <h3>2. Absolute Positioning</h3>
+        <div class="relative-parent">
+          <p>I am the parent (position: relative)</p>
+          <div class="absolute-child">I am absolute — top right corner</div>
+          <div class="absolute-child2">I am absolute — bottom left</div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Z-INDEX -->
+      <section class="demo-section">
+        <h3>3. Z-Index Layering</h3>
+        <div class="z-wrapper">
+          <div class="z-box z1">Z-index: 1</div>
+          <div class="z-box z2">Z-index: 2</div>
+          <div class="z-box z3">Z-index: 3</div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: STICKY SIDEBAR -->
+      <section class="demo-section sticky-section clearfix">
+        <h3>4. Sticky Sidebar (scroll to see effect)</h3>
+
+        <div class="sticky-content">
+          <p>Scroll down to see the sidebar stick to the top.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+
+        <div class="sticky-sidebar">
+          <div class="sticky-box">
+            📌 I am sticky!<br>
+            I stay visible while you scroll
+          </div>
+        </div>
+
+      </section>
+
+      <!-- SECTION 5: TOOLTIP -->
+      <section class="demo-section">
+        <h3>5. Tooltip using Positioning</h3>
+        <p>Hover over the buttons below:</p>
+        <div class="tooltip-area">
+          <div class="tooltip-wrap">
+            <button class="tooltip-btn">Hover Me</button>
+            <span class="tooltip-text">Hello! I am a tooltip</span>
+          </div>
+          <div class="tooltip-wrap">
+            <button class="tooltip-btn">Another Button</button>
+            <span class="tooltip-text">Tooltip on this one too!</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: MODAL BUTTON -->
+      <section class="demo-section">
+        <h3>6. Modal Dialog</h3>
+        <button class="open-modal-btn" onclick="openModal()">Open Modal</button>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h2>Modal Dialog</h2>
+      <p>This modal uses <strong>position: fixed</strong> to stay centered on screen regardless of scroll.</p>
+      <p>The dark overlay behind it uses z-index layering.</p>
+      <button class="open-modal-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>

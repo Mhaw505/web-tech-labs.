@@ -1,0 +1,190 @@
+/* ===== FLOAT LAYOUT STYLES ===== */
+
+/* CLEARFIX - fixes float collapse */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* HEADER */
+.mag-header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.mag-header h1 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.tagline {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* FEATURED STORY */
+.featured-story {
+  background: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.float-left {
+  float: left;
+  margin: 0 20px 10px 0;
+  border-radius: 6px;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 10px 20px;
+  border-radius: 6px;
+}
+
+/* THREE COLUMNS */
+.three-col-section {
+  margin-bottom: 30px;
+}
+
+.col-third {
+  float: left;
+  width: 31%;
+  margin-right: 3%;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.col-third:last-child {
+  margin-right: 0;
+}
+
+.col-third img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.col-third h3 {
+  color: #e74c3c;
+  border-bottom: 2px solid #e74c3c;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  color: #3498db;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* MAIN + SIDEBAR */
+.content-area {
+  margin-bottom: 30px;
+}
+
+.main-content {
+  float: left;
+  width: 65%;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.small-img {
+  width: 250px;
+  border-radius: 6px;
+}
+
+.sidebar {
+  float: right;
+  width: 32%;
+}
+
+.sidebar-widget {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-top: 3px solid #3498db;
+}
+
+.sidebar-widget h3 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.story-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.story-list li a {
+  color: #333;
+}
+
+.story-list li a:hover {
+  color: #3498db;
+}
+
+.ad-box {
+  background: #f0f0f0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+.mag-footer {
+  background: #2c3e50;
+  color: #aaa;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .col-third {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    float: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .sidebar {
+    float: none;
+    width: 100%;
+  }
+
+  .float-left,
+  .float-right {
+    float: none;
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+
+  .small-img {
+    width: 100%;
+  }
+}
