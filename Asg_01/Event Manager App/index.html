@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <header>
+        <h1>Event Horizon</h1>
+        <p>
+        your premier event management platform.
+        </p>
+    </header>
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search events by name or date">
+    </section>
+    
+    <section class="form-selection">
+        <div id="warningMsg" class="warning hidden">please fill in all the fields</div>  
+        <div class=""form-group>
+            <div class="form-group">
+      <input type="text" id="eventName" placeholder="Event Name" />
+      <input type="date" id="eventDate" />
+      <textarea id="eventDesc" placeholder="Event Description"></textarea>
+      <button id="addBtn">+ Add Event</button>
+        </div>   
+    </section>
+    <section class="events-selection">
+        <h2>Upcoming events</h2>
+        <div id="eventsList" class=""events-grid"></div>
+
+    </section>
+    <footer>
+    <p>Maha Naveed &nbsp;|&nbsp; &copy; <span id="year"></span></p>
+  </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>
